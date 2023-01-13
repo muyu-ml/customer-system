@@ -1,0 +1,21 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+    #超时时间
+    connection-timeout: 60000ms
+    #最小线程数
+    min-spare-threads: 100
+    #最大线程数
+    max-threads: 800
+    #最大连接数
+    max-connections: 10000
+    #最大等待队列长度
+    accept-count: 500
+  undertow:
+    io-threads: 4 #设置IO线程数
+    worker-threads: 20 #设置工作线程数
+    buffer-size: 1024 #设置buffer大小
+    direct-buffers: true # 是否分配的直接内存
