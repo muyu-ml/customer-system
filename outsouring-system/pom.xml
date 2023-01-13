@@ -12,6 +12,7 @@
     <artifactId>outsouring-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
     <description>外包客服系统工程</description>
 
     <modules>
