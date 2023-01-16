@@ -3,13 +3,19 @@ package com.lcl.galaxy.cs.service.impl;
 import com.lcl.galaxy.cs.entity.staff.CustomerStaff;
 import com.lcl.galaxy.cs.infrastructure.exception.BizException;
 import com.lcl.galaxy.cs.infrastructure.page.PageObject;
+import com.lcl.galaxy.cs.mapper.MybatisCustomerStaffMapper;
 import com.lcl.galaxy.cs.service.ICustomerStaffService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class CustomerStaffServiceImpl implements ICustomerStaffService {
+
+    @Autowired
+    private MybatisCustomerStaffMapper customerStaffMapper;
+
     @Override
     public PageObject<CustomerStaff> findCustomerStaffs(Long pageSize, Long pageIndex) {
         return null;
