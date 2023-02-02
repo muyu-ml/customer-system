@@ -19,3 +19,9 @@ server:
     worker-threads: 20 #设置工作线程数
     buffer-size: 1024 #设置buffer大小
     direct-buffers: true # 是否分配的直接内存
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.249.130:3306/customer_system
+    username: root
+    password: root

@@ -1,8 +1,8 @@
 package com.lcl.galaxy.cs.converter;
 
-import com.lcl.galaxy.cs.controller.req.AddCustomerStaffReqVO;
-import com.lcl.galaxy.cs.controller.req.UpdateCustomerStaffReqVO;
-import com.lcl.galaxy.cs.controller.resp.CustomerStaffRespVO;
+import com.lcl.galaxy.cs.controller.vo.AddCustomerStaffReqVO;
+import com.lcl.galaxy.cs.controller.vo.CustomerStaffRespVO;
+import com.lcl.galaxy.cs.controller.vo.UpdateCustomerStaffReqVO;
 import com.lcl.galaxy.cs.entity.staff.CustomerStaff;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

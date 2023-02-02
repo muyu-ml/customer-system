@@ -1,4 +1,4 @@
-package com.lcl.galaxy.cs.controller.req;
+package com.lcl.galaxy.cs.controller.vo;
 
 import com.lcl.galaxy.cs.entity.staff.enums.Gender;
 import lombok.AllArgsConstructor;
