@@ -1,14 +1,13 @@
 package com.lcl.galaxy.cs.infrastructure.page;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 import java.util.List;
 
 @Data
 @ToString
-@Builder
+@Accessors(chain = true)
 public class PageObject<T> {
     private Long total;
 
@@ -17,4 +16,11 @@ public class PageObject<T> {
     private Long pageSize;
 
     private List<T> list;
+
+    public void buildPage(List<T> list, Long total, Long pageIndex, Long pageSize) {
+        this.list = list;
+        this.total = total;
+        this.pageIndex = pageIndex;
+        this.pageSize = pageSize;
+    }
 }

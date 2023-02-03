@@ -4,8 +4,8 @@ Content-Type: application/json
 {
   "groupId": "1",
   "accountId": "100",
-  "staffName": "tianyalan",
-  "nickname": "tianyalan",
+  "staffName": "zhangsan",
+  "nickname": "zhangsan",
   "status": "ONLINE",
   "avatar": "1.jpg",
   "phone": "13355667789",

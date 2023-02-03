@@ -1,6 +1,10 @@
 package com.lcl.galaxy.cs.entity.staff;
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.lcl.galaxy.cs.entity.staff.enums.Gender;
 import com.lcl.galaxy.cs.entity.staff.enums.Status;
 import lombok.Data;
@@ -8,11 +12,12 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
+@TableName("customer_staff")
 public class CustomerStaff {
     /**
      * 主键
      */
-    //@TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
@@ -83,7 +88,7 @@ public class CustomerStaff {
     /**
      * 是否删除，1=删除,0=未删除
      */
-    //@TableLogic
+    @TableLogic
     private Boolean isDeleted;
 
     /**

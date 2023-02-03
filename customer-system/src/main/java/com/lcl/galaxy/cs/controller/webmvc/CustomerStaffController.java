@@ -5,12 +5,14 @@ import com.lcl.galaxy.cs.controller.vo.UpdateCustomerStaffReqVO;
 import com.lcl.galaxy.cs.controller.vo.CustomerStaffRespVO;
 import com.lcl.galaxy.cs.converter.CustomerStaffConverter;
 import com.lcl.galaxy.cs.entity.staff.CustomerStaff;
+import com.lcl.galaxy.cs.infrastructure.page.PageObject;
 import com.lcl.galaxy.cs.infrastructure.vo.Result;
 import com.lcl.galaxy.cs.service.ICustomerStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.async.WebAsyncTask;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @RestController
@@ -106,6 +108,14 @@ public class CustomerStaffController {
         return task;
     }
 
+    @DeleteMapping("/{staffId}")
+    public Result<Boolean> deleteCustomerStaffById(@PathVariable("staffId") Long staffId) {
+
+        Boolean isDeleted = customerStaffService.deleteCustomerStaffById(staffId);
+
+        return Result.success(isDeleted);
+    }
+
 
 //    @GetMapping("/future/async/{staffId}")
 //    public Result<CustomerStaffRespVO> asyncfutureFindCustomerStaffById(@PathVariable("staffId") Long staffId) {
@@ -118,4 +128,21 @@ public class CustomerStaffController {
 //        System.out.println("main thread: " + Thread.currentThread().getName());
 //
 //    }
+
+
+    @GetMapping("/page/{pageSize}/{pageIndex}")
+    public Result<PageObject<CustomerStaffRespVO>> findCustomerStaffs(@PathVariable("pageSize") Long pageSize, @PathVariable("pageIndex") Long pageIndex) {
+
+        PageObject<CustomerStaff> pagedCustomerStaff = customerStaffService.findCustomerStaffs(pageSize, pageIndex);
+
+        List<CustomerStaffRespVO> customerStaffRespVOs = CustomerStaffConverter.INSTANCE.convertListResp(pagedCustomerStaff.getList());
+
+        PageObject<CustomerStaffRespVO> result = new PageObject<CustomerStaffRespVO>()
+                .setList(customerStaffRespVOs)
+                .setTotal(pagedCustomerStaff.getTotal())
+                .setPageIndex(pagedCustomerStaff.getPageIndex())
+                .setPageSize(pagedCustomerStaff.getPageSize());
+
+        return Result.success(result);
+    }
 }
