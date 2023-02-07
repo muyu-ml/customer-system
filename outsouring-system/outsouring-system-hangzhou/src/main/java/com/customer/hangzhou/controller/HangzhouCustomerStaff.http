@@ -1,4 +1,3 @@
-
 GET localhost:10003/customerStaffs/hangzhou/
 Content-Type: application/json
 
@@ -16,6 +15,6 @@ POST localhost:10003/customerStaffs/hangzhou/
 Content-Type: application/json
 
 {
-  "nickname" : "tianyalan",
-  "gender" : "MALE"
+  "nickname": "tianyalan",
+  "gender": "MALE"
 }

@@ -51,7 +51,7 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     // 直接调用父类 ServiceImpl 中的方法
     @Override
     public List<CustomerStaff> findCustomerStaffs() {
-        return this.findCustomerStaffs();
+        return this.list();
     }
 
     @Override
