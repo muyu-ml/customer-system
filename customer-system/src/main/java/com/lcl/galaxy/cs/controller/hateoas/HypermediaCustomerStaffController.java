@@ -70,7 +70,7 @@ public class HypermediaCustomerStaffController {
         Link selfLink = linkTo(methodOn(HypermediaCustomerStaffController.class).single(staffId)).withSelfRel();
 
         // 为CustomerStaff跟请求地址创建一个Link
-        Link rootLink = linkTo(methodOn(HypermediaCustomerStaffController.class).all()).withRel("customerStaffs");
+        Link rootLink = linkTo(methodOn(HypermediaCustomerStaffController.class).all()).withRel(" ");
 
         return EntityModel.of(customerStaff, selfLink, rootLink);
     }
