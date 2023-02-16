@@ -25,10 +25,10 @@ spring:
     time-zone: Asia/Shanghai
   datasource:
     # Spring 数据源配置方式
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://192.168.249.130:3306/customer_system
-#    username: root
-#    password: root
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://192.168.249.130:3306/customer_system
+    #    username: root
+    #    password: root
     dynamic:
       primary: master
       druid:
