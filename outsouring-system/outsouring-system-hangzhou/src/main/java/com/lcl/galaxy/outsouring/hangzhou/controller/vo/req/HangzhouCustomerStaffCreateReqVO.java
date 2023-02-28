@@ -1,20 +1,18 @@
-package com.customer.hangzhou.controller.vo.resp;
+package com.lcl.galaxy.outsouring.hangzhou.controller.vo.req;
 
 import lombok.Data;
 import lombok.ToString;
 
-import java.util.Date;
+import java.io.Serializable;
 
 @Data
 @ToString
-public class HangzhouCustomerStaffRespVO {
+public class HangzhouCustomerStaffCreateReqVO implements Serializable {
 
-    private Long id;
     private String nickname;
     private String avatar;
     private String phone;
     private String gender;
     private String goodAt;
     private String remark;
-    private Date createTime;
 }

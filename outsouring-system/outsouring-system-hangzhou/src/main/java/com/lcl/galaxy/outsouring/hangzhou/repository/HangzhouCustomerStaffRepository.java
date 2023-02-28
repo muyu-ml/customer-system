@@ -1,6 +1,6 @@
-package com.customer.hangzhou.repository;
+package com.lcl.galaxy.outsouring.hangzhou.repository;
 
-import com.customer.hangzhou.entity.HangzhouCustomerStaff;
+import com.lcl.galaxy.outsouring.hangzhou.entity.HangzhouCustomerStaff;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Date;

@@ -1,8 +1,8 @@
-package com.customer.hangzhou.service.impl;
+package com.lcl.galaxy.outsouring.hangzhou.service.impl;
 
-import com.customer.hangzhou.entity.HangzhouCustomerStaff;
-import com.customer.hangzhou.repository.HangzhouCustomerStaffRepository;
-import com.customer.hangzhou.service.HangzhouCustomerStaffService;
+import com.lcl.galaxy.outsouring.hangzhou.entity.HangzhouCustomerStaff;
+import com.lcl.galaxy.outsouring.hangzhou.repository.HangzhouCustomerStaffRepository;
+import com.lcl.galaxy.outsouring.hangzhou.service.HangzhouCustomerStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

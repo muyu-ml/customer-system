@@ -1,4 +1,4 @@
-package com.lcl.galaxy.outsouring.beijing;
+package com.lcl.galaxy.outsouring.hangzhou;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

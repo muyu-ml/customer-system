@@ -1,4 +1,4 @@
-package com.customer.hangzhou;
+package com.lcl.galaxy.outsouring.hangzhou;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

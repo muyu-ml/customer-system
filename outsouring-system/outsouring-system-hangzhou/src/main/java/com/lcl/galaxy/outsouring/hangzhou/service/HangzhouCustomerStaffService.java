@@ -1,6 +1,6 @@
-package com.customer.hangzhou.service;
+package com.lcl.galaxy.outsouring.hangzhou.service;
 
-import com.customer.hangzhou.entity.HangzhouCustomerStaff;
+import com.lcl.galaxy.outsouring.hangzhou.entity.HangzhouCustomerStaff;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.customer.hangzhou.entity;
+package com.lcl.galaxy.outsouring.hangzhou.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

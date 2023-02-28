@@ -1,9 +1,9 @@
-package com.customer.hangzhou.converter;
+package com.lcl.galaxy.outsouring.hangzhou.converter;
 
-import com.customer.hangzhou.controller.vo.req.HangzhouCustomerStaffCreateReqVO;
-import com.customer.hangzhou.controller.vo.req.HangzhouCustomerStaffUpdateReqVO;
-import com.customer.hangzhou.controller.vo.resp.HangzhouCustomerStaffRespVO;
-import com.customer.hangzhou.entity.HangzhouCustomerStaff;
+import com.lcl.galaxy.outsouring.hangzhou.controller.vo.req.HangzhouCustomerStaffCreateReqVO;
+import com.lcl.galaxy.outsouring.hangzhou.controller.vo.req.HangzhouCustomerStaffUpdateReqVO;
+import com.lcl.galaxy.outsouring.hangzhou.controller.vo.resp.HangzhouCustomerStaffRespVO;
+import com.lcl.galaxy.outsouring.hangzhou.entity.HangzhouCustomerStaff;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

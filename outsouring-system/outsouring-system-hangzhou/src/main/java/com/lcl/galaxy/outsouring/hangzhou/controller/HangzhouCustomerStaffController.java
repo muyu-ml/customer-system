@@ -1,11 +1,11 @@
-package com.customer.hangzhou.controller;
+package com.lcl.galaxy.outsouring.hangzhou.controller;
 
-import com.customer.hangzhou.controller.vo.req.HangzhouCustomerStaffCreateReqVO;
-import com.customer.hangzhou.controller.vo.req.HangzhouCustomerStaffUpdateReqVO;
-import com.customer.hangzhou.controller.vo.resp.HangzhouCustomerStaffRespVO;
-import com.customer.hangzhou.converter.HangzhouCustomerStaffConverter;
-import com.customer.hangzhou.entity.HangzhouCustomerStaff;
-import com.customer.hangzhou.service.HangzhouCustomerStaffService;
+import com.lcl.galaxy.outsouring.hangzhou.controller.vo.req.HangzhouCustomerStaffCreateReqVO;
+import com.lcl.galaxy.outsouring.hangzhou.controller.vo.req.HangzhouCustomerStaffUpdateReqVO;
+import com.lcl.galaxy.outsouring.hangzhou.controller.vo.resp.HangzhouCustomerStaffRespVO;
+import com.lcl.galaxy.outsouring.hangzhou.converter.HangzhouCustomerStaffConverter;
+import com.lcl.galaxy.outsouring.hangzhou.entity.HangzhouCustomerStaff;
+import com.lcl.galaxy.outsouring.hangzhou.service.HangzhouCustomerStaffService;
 import com.lcl.galaxy.cs.infrastructure.vo.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

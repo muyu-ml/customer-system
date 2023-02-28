@@ -1,4 +1,4 @@
-package com.customer.hangzhou.controller.vo.req;
+package com.lcl.galaxy.outsouring.hangzhou.controller.vo.req;
 
 import lombok.Data;
 import lombok.ToString;
