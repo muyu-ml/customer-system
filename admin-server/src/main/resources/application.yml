@@ -1,0 +1,18 @@
+server:
+  port: 9000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    com.lcl.galaxy.adminserver: INFO
+
+spring:
+  security:
+    user:
+      name: "lcl"
+      password: "lcl"

@@ -75,9 +75,9 @@ management:
         include: '*'
 
 ---
-#spring:
-#  boot:
-#    admin:
-#      client:
-#        url: http://localhost:9000
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:9000
 
