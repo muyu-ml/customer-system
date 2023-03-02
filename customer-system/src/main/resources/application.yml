@@ -55,4 +55,29 @@ mybatis-plus:
 #      # 逻辑删除字面值：删除为1
 #      logic-delete-value: 1
 
+info:
+  app:
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+---
+#spring:
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:9000
 
