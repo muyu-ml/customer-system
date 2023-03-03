@@ -28,6 +28,7 @@ CREATE TABLE `customer_group` (
 
 CREATE TABLE `outsourcing_system` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `system_code` varchar(45) NOT NULL COMMENT '系统代码',
   `system_name` varchar(45) NOT NULL COMMENT '系统名称',
   `description` varchar(255) DEFAULT NULL COMMENT '系统描述',
   `system_url` varchar(100) NOT NULL COMMENT '系统访问URL',
