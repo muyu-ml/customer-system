@@ -66,6 +66,19 @@ public class CustomerStaffController {
         return Result.success(customerStaffRespVO);
     }
 
+    /**
+     * 根据系统id获取客服x
+     * @param systemId
+     * @return
+     */
+    @GetMapping("/sync/{systemId}")
+    public Result<Boolean> findCustomerStaffBySystemId(@PathVariable("systemId") Long systemId) {
+
+        customerStaffService.syncGetOutsourcingCustomerStaffBySystemId(systemId);
+
+        return Result.success(true);
+    }
+
     @GetMapping("/async/{staffId}")
     public WebAsyncTask<CustomerStaffRespVO> asyncFindCustomerStaffById(@PathVariable("staffId") Long staffId) {
 

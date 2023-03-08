@@ -32,6 +32,11 @@ public class HangzhouCustomerStaff implements Serializable {
     private String nickname;
 
     /**
+     * 客服姓名
+     */
+    private String staffName;
+
+    /**
      * 头像
      */
     private String avatar;

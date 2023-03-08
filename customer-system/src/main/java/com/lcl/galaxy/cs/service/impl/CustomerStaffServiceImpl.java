@@ -5,11 +5,14 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lcl.galaxy.cs.entity.staff.CustomerStaff;
+import com.lcl.galaxy.cs.entity.tenant.OutsourcingSystem;
 import com.lcl.galaxy.cs.infrastructure.exception.BizException;
 import com.lcl.galaxy.cs.infrastructure.page.PageObject;
+import com.lcl.galaxy.cs.integration.OutsourcingSystemClient;
 import com.lcl.galaxy.cs.mapper.CustomerStaffMapper;
 import com.lcl.galaxy.cs.mapper.MybatisCustomerStaffMapper;
 import com.lcl.galaxy.cs.service.ICustomerStaffService;
+import com.lcl.galaxy.cs.service.IOutsourcingSystemService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +33,11 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
 //    public CustomerStaff findCustomerStaffById1(Long staffId) {
 //        return customerStaffMapper.selectById(staffId);
 //    }
+
+    @Autowired
+    private IOutsourcingSystemService outsourcingSystemService;
+    @Autowired
+    private OutsourcingSystemClient outsourcingSystemClient;
 
     // 使用 baseMapper 操作数据库
     @Override
@@ -75,6 +83,17 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
         */
         // 使用Mybatis-Plus自带的逻辑删除，直接调用删除方法，会被拦截，然后更新
         return this.removeById(staffId);
+    }
+
+    @Override
+    public void syncGetOutsourcingCustomerStaffBySystemId(Long systemId) {
+        // 获取租户信息
+        OutsourcingSystem outsourcingSystem = outsourcingSystemService.findOutsourcingSystemById(systemId);
+        // 根据租户信息远程获取客服信息
+        List<CustomerStaff> customerStaffs = outsourcingSystemClient.getCustomerStaffs(outsourcingSystem);
+
+        // 批量保存
+        this.saveBatch(customerStaffs);
     }
 
     @Override
