@@ -81,3 +81,15 @@ spring:
       client:
         url: http://localhost:9000
 
+xxl:
+  job:
+    accessToken: lcl-token
+    executor:
+      appname: customer-system
+      ip:
+      logpath: /Users/conglongli/Documents/workspace/customer-system/customer-system-monolith/logs
+      logretentiondays: -1
+      port: 9999
+    admin:
+      addresses: http://localhost:8888/xxl-job-admin
+
