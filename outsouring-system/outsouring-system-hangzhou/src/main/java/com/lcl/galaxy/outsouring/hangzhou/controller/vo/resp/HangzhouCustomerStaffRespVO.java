@@ -11,7 +11,6 @@ public class HangzhouCustomerStaffRespVO {
 
     private Long id;
     private String nickname;
-    private String staffName;
     private String avatar;
     private String phone;
     private String gender;

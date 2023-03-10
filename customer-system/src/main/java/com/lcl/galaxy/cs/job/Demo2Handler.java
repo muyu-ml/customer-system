@@ -1,4 +1,4 @@
-package com.lcl.galaxy.cs.xxljob;
+package com.lcl.galaxy.cs.job;
 
 import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.handler.annotation.XxlJob;

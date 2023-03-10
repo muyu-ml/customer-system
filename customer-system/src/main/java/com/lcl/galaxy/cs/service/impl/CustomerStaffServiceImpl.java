@@ -13,6 +13,7 @@ import com.lcl.galaxy.cs.mapper.CustomerStaffMapper;
 import com.lcl.galaxy.cs.mapper.MybatisCustomerStaffMapper;
 import com.lcl.galaxy.cs.service.ICustomerStaffService;
 import com.lcl.galaxy.cs.service.IOutsourcingSystemService;
+import com.lcl.galaxy.cs.servicebus.endpoint.CustomerStaffEndpoint;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,8 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     private IOutsourcingSystemService outsourcingSystemService;
     @Autowired
     private OutsourcingSystemClient outsourcingSystemClient;
+    @Autowired
+    private CustomerStaffEndpoint customerStaffEndpoint;
 
     // 使用 baseMapper 操作数据库
     @Override
@@ -90,8 +93,9 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
         // 获取租户信息
         OutsourcingSystem outsourcingSystem = outsourcingSystemService.findOutsourcingSystemById(systemId);
         // 根据租户信息远程获取客服信息
-        List<CustomerStaff> customerStaffs = outsourcingSystemClient.getCustomerStaffs(outsourcingSystem);
+        // List<CustomerStaff> customerStaffs = outsourcingSystemClient.getCustomerStaffs(outsourcingSystem);
 
+        List<CustomerStaff> customerStaffs = customerStaffEndpoint.fetchCustomerStaffs(outsourcingSystem);
         // 批量保存
         this.saveBatch(customerStaffs);
     }

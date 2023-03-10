@@ -1,4 +1,4 @@
-package com.lcl.galaxy.cs.xxljob;
+package com.lcl.galaxy.cs.job;
 
 import com.lcl.galaxy.cs.service.ICustomerStaffService;
 import com.xxl.job.core.biz.model.ReturnT;
