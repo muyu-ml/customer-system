@@ -44,6 +44,7 @@ public class HangzhouCustomerStaffTransformer implements CustomerStaffTransforme
             customerStaff.setAccountId(-1L);
             customerStaff.setStatus(Status.OFFLINE);
 
+            customerStaff.setId(null);
             customerStaffList.add(customerStaff);
         }
         return customerStaffList;

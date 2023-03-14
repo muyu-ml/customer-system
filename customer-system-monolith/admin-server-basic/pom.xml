@@ -9,10 +9,10 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>com.lcl.galaxy</groupId>
-    <artifactId>admin-server</artifactId>
+    <artifactId>admin-server-basic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>admin-server</name>
-    <description>admin-server</description>
+    <name>${project.artifactId}</name>
+    <description>${project.artifactId}</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>

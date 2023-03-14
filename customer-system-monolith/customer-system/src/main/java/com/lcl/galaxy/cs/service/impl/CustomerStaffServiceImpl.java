@@ -17,6 +17,7 @@ import com.lcl.galaxy.cs.servicebus.endpoint.CustomerStaffEndpoint;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -89,6 +90,7 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     }
 
     @Override
+    @Transactional
     public void syncGetOutsourcingCustomerStaffBySystemId(Long systemId) {
         // 获取租户信息
         OutsourcingSystem outsourcingSystem = outsourcingSystemService.findOutsourcingSystemById(systemId);
