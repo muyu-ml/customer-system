@@ -1,0 +1,95 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+    #超时时间
+    connection-timeout: 60000ms
+    #最小线程数
+    min-spare-threads: 100
+    #最大线程数
+    max-threads: 800
+    #最大连接数
+    max-connections: 10000
+    #最大等待队列长度
+    accept-count: 500
+  undertow:
+    io-threads: 4 #设置IO线程数
+    worker-threads: 20 #设置工作线程数
+    buffer-size: 1024 #设置buffer大小
+    direct-buffers: true # 是否分配的直接内存
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  datasource:
+    # Spring 数据源配置方式
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://192.168.249.130:3306/customer_system
+    #    username: root
+    #    password: root
+    dynamic:
+      primary: master
+      druid:
+        initial-size: 3
+        min-idle: 3
+        max-active: 40
+        max-wait: 60000
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://192.168.249.130:3306/customer_system?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: root
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  global-config:
+#    db-config:
+#      # 逻辑删除字段名
+#      logic-delete-field: is_deleted
+#      # 逻辑删除字面值：未删除为0
+#      logic-not-delete-value: 0
+#      # 逻辑删除字面值：删除为1
+#      logic-delete-value: 1
+
+info:
+  app:
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+---
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:9000
+
+xxl:
+  job:
+    accessToken: lcl-token
+    executor:
+      appname: customer-system
+      ip:
+      logpath: /Users/conglongli/Documents/workspace/customer-system/customer-system-monolith/logs
+      logretentiondays: -1
+      port: 9999
+    admin:
+      addresses: http://localhost:8888/xxl-job-admin
+
