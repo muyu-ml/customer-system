@@ -8,6 +8,7 @@ import com.lcl.galaxy.cs.infrastructure.exception.BizException;
 import com.lcl.galaxy.cs.infrastructure.page.PageObject;
 import com.lcl.galaxy.customer.service.provider.entity.staff.CustomerStaff;
 import com.lcl.galaxy.customer.service.provider.entity.tenant.OutsourcingSystem;
+import com.lcl.galaxy.customer.service.provider.intergation.CustomerStaffIntergationClient;
 import com.lcl.galaxy.customer.service.provider.mapper.CustomerStaffMapper;
 import com.lcl.galaxy.customer.service.provider.service.ICustomerStaffService;
 import com.lcl.galaxy.customer.service.provider.service.IOutsourcingSystemService;
@@ -34,6 +35,8 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
 
     @Autowired
     private IOutsourcingSystemService outsourcingSystemService;
+    @Autowired
+    private CustomerStaffIntergationClient customerStaffIntergationClient;
 
     // 使用 baseMapper 操作数据库
     @Override
@@ -87,8 +90,7 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
         OutsourcingSystem outsourcingSystem = outsourcingSystemService.findOutsourcingSystemById(systemId);
         // 根据租户信息远程获取客服信息
         // List<CustomerStaff> customerStaffs = outsourcingSystemClient.getCustomerStaffs(outsourcingSystem);
-
-        List<CustomerStaff> customerStaffs = null;
+        List<CustomerStaff> customerStaffs = customerStaffIntergationClient.getCustomerStaffs(outsourcingSystem);
         // 批量保存
         this.saveBatch(customerStaffs);
     }

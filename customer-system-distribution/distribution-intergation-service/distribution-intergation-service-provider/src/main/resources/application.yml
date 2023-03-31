@@ -16,8 +16,8 @@ dubbo:
     name: dubbo
     port: -1
   registry:
-    address: zookeeper://127.0.0.1:2181
-    file: D:/dubbo/middle-service/cache
+    address: zookeeper://192.168.249.130:2181
+    file: /Users/conglongli/Documents/workspace/customer-system/customer-system-distribution/dubbo-log
   scan:
     base-packages: org.geekbang.projects.cs
 integration:

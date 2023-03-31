@@ -42,6 +42,8 @@ spring:
           url: jdbc:mysql://192.168.249.130:3306/customer_system?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
           username: root
           password: root
+  application:
+    name: distribution-customer-system
 mybatis-plus:
   mapper-locations: classpath:mappers/*.xml
   configuration:
@@ -92,4 +94,20 @@ xxl:
       port: 9999
     admin:
       addresses: http://localhost:8888/xxl-job-admin
-
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://192.168.249.130:2181
+    file: /Users/conglongli/Documents/workspace/customer-system/customer-system-distribution/dubbo-log
+  scan:
+    base-packages: com.lcl.galaxy
+---
+customer:
+  service:
+    version: 1.0.0
+---
+customer:
+  system:
+    version: 1.0.0
