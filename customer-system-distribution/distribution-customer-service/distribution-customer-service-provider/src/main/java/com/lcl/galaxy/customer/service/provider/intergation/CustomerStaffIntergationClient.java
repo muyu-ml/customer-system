@@ -12,7 +12,7 @@ import java.util.List;
 
 @Component
 public class CustomerStaffIntergationClient {
-    @DubboReference(version = "${integration.service.version}")
+    @DubboReference(version = "${integration.service.version}", timeout = 5000, loadbalance = "roundrobin", retries = 2, mock = "com.lcl.galaxy.customer.service.provider.intergation.CustomerStaffIntegrationServiceMock")
     private CustomerStaffIntegrationService customerStaffIntegrationService;
 
     public List<CustomerStaff> getCustomerStaffs(OutsourcingSystem outsourcingSystem){
