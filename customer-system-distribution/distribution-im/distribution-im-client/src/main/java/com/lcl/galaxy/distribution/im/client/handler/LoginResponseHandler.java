@@ -1,7 +1,7 @@
 package com.lcl.galaxy.distribution.im.client.handler;
 
-import com.lcl.galaxy.distribution.im.client.packet.LoginResponsePacket;
-import com.lcl.galaxy.distribution.im.client.utils.LoginUtil;
+import com.lcl.galaxy.distribution.im.common.packet.LoginResponsePacket;
+import com.lcl.galaxy.distribution.im.common.utils.LoginUtil;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;

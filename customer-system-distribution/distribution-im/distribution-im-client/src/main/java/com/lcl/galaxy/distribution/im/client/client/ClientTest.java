@@ -1,9 +1,8 @@
 package com.lcl.galaxy.distribution.im.client.client;
 
-import com.lcl.galaxy.distribution.im.client.handler.LoginHandler;
-import com.lcl.galaxy.distribution.im.client.handler.LoginResponseHandler;
-import com.lcl.galaxy.distribution.im.client.handler.MessageResponseHandler;
-import com.lcl.galaxy.distribution.im.client.handler.PacketCodecHandler;
+import com.lcl.galaxy.distribution.im.client.handler.*;
+import com.lcl.galaxy.distribution.im.common.handler.PacketCodecHandler;
+import com.lcl.galaxy.distribution.im.common.handler.ServerIdelHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -32,7 +31,9 @@ public class ClientTest {
                 .handler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
+                        nioSocketChannel.pipeline().addLast(new ServerIdelHandler());
                         nioSocketChannel.pipeline().addLast(PacketCodecHandler.getInstance());
+                        nioSocketChannel.pipeline().addLast(new ClientIdleHandler());
                         nioSocketChannel.pipeline().addLast(new LoginHandler(userId, userName));
                         nioSocketChannel.pipeline().addLast(LoginResponseHandler.getInstance());
                         nioSocketChannel.pipeline().addLast(MessageResponseHandler.getInstance());

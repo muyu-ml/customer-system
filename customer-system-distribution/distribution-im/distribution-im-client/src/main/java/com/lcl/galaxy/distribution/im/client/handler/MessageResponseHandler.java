@@ -1,6 +1,6 @@
 package com.lcl.galaxy.distribution.im.client.handler;
 
-import com.lcl.galaxy.distribution.im.client.packet.MessageResponsePacket;
+import com.lcl.galaxy.distribution.im.common.packet.MessageResponsePacket;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
