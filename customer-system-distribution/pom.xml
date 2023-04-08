@@ -16,6 +16,7 @@
         <module>distribution-outsouring-system</module>
         <module>distribution-customer-service</module>
         <module>distribution-intergation-service</module>
+        <module>distribution-im</module>
     </modules>
 
 
