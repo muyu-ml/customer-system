@@ -7,10 +7,12 @@ import com.lcl.galaxy.distribution.im.common.utils.LoginUtil;
 import com.lcl.galaxy.distribution.im.common.utils.Session;
 import com.lcl.galaxy.distribution.im.common.utils.SessionUtil;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
 
+@ChannelHandler.Sharable
 @Slf4j
 public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRequestPacket> {
 

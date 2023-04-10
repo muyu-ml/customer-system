@@ -1,5 +1,5 @@
 
-POST localhost:8080/p2p/chat
+POST localhost:9001/p2p/chat
 Content-Type: application/json
 
 {
