@@ -1,0 +1,1 @@
+package com.lcl.galaxy.message.service.definition;
