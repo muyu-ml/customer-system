@@ -19,6 +19,7 @@
         <module>distribution-message-service-common</module>
         <module>distribution-message-service-traditional</module>
         <module>distribution-message-service-sharding</module>
+        <module>distribution-message-service-readwrite-spliting</module>
     </modules>
 
 
