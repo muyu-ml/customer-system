@@ -18,6 +18,7 @@
         <module>distribution-intergation-service</module>
         <module>distribution-im</module>
         <module>distribution-message-service</module>
+        <module>distribution-search-service</module>
     </modules>
 
 

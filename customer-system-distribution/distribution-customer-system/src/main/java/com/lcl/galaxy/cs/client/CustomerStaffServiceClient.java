@@ -1,6 +1,6 @@
 package com.lcl.galaxy.cs.client;
 
-import com.lcl.galaxy.customer.service.definition.service.CustomerStaffSyncService;
+import com.lcl.galaxy.search.service.definition.service.CustomerStaffSyncService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Component;
 
