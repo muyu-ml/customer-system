@@ -1,7 +1,7 @@
-package com.lcl.galaxy.customer.service.provider.lucene.controller;
+package com.lcl.galaxy.search.service.provider.lucene.controller;
 
-import com.lcl.galaxy.customer.service.provider.lucene.entity.Book;
-import com.lcl.galaxy.customer.service.provider.lucene.service.SearchService;
+import com.lcl.galaxy.search.service.provider.lucene.entity.Book;
+import com.lcl.galaxy.search.service.provider.lucene.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

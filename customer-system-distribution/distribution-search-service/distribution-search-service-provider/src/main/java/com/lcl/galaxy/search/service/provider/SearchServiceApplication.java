@@ -1,4 +1,4 @@
-package com.lcl.galaxy.customer.service.provider;
+package com.lcl.galaxy.search.service.provider;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;

@@ -1,4 +1,4 @@
-package com.lcl.galaxy.customer.service.provider.lucene.utils;
+package com.lcl.galaxy.search.service.provider.lucene.utils;
 
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;

@@ -1,4 +1,4 @@
-package com.lcl.galaxy.customer.service.provider.lucene.entity;
+package com.lcl.galaxy.search.service.provider.lucene.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

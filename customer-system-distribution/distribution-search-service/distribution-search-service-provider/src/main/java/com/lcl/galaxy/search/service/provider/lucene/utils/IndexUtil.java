@@ -1,4 +1,4 @@
-package com.lcl.galaxy.customer.service.provider.lucene.utils;
+package com.lcl.galaxy.search.service.provider.lucene.utils;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
@@ -16,9 +16,12 @@ import java.nio.file.Paths;
 public class IndexUtil {
 
     public static IndexWriter getIndexWriter(String indexPath, boolean create) throws IOException {
+        // 构建 FS 路径
         Directory dir = FSDirectory.open(Paths.get(indexPath, new String[0]));
+        // 分析器，这里构建一个WhitespaceAnalyzer分析器，使用空格进行分析
         Analyzer analyzer = new WhitespaceAnalyzer();
         IndexWriterConfig iwc = new IndexWriterConfig(analyzer);
+        // 合并：把不同的索引合并成一个索引
         LogMergePolicy mergePolicy = new LogByteSizeMergePolicy();
 
         //设置segment添加文档(Document)时的合并频率
