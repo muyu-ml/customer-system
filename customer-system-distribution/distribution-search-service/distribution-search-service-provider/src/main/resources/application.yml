@@ -40,6 +40,16 @@ mybatis-plus:
       # 逻辑删除字面值：删除为1
       logic-delete-value: 1
 
+elasticsearch:
+  info:
+    username: elastic
+    password: changeme
+    hostname: 192.168.249.130
+    port: 9200
+    scheme: http
+  index:
+    customerAutoReplyIndex: customer_auto_reply_index
+
 logging:
     level:
       org.geekbang.projects.cs: INFO
