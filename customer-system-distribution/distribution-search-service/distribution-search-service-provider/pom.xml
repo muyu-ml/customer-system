@@ -120,26 +120,26 @@
 			<artifactId>druid-spring-boot-starter</artifactId>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>com.baomidou</groupId>-->
-<!--			<artifactId>mybatis-plus-boot-starter</artifactId>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>com.baomidou</groupId>-->
-<!--			<artifactId>mybatis-plus-boot-starter-test</artifactId>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>com.baomidou</groupId>-->
-<!--			<artifactId>dynamic-datasource-spring-boot-starter</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.mapstruct</groupId>
@@ -208,6 +208,19 @@
 			<artifactId>lucene-backward-codecs</artifactId>
 			<version>${lucene.version}</version>
 		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>org.elasticsearch.client</groupId>-->
+<!--			<artifactId>elasticsearch-rest-high-level-client</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.elasticsearch.client</groupId>-->
+<!--			<artifactId>elasticsearch-rest-client</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.elasticsearch</groupId>-->
+<!--			<artifactId>elasticsearch</artifactId>-->
+<!--		</dependency>-->
 
 	</dependencies>
 
