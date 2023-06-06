@@ -16,9 +16,9 @@
     <description>外包客服系统工程</description>
 
     <modules>
-        <module>outsouring-system-beijing</module>
-        <module>outsouring-system-hangzhou</module>
-        <module>outsouring-system-shanghai</module>
+        <module>distribution-outsouring-system-beijing</module>
+        <module>distribution-outsouring-system-hangzhou</module>
+        <module>distribution-outsouring-system-shanghai</module>
     </modules>
 
 
