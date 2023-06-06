@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>com.lcl.galaxy</groupId>
-            <artifactId>cs-infrastructure-utility</artifactId>
+            <artifactId>distribution-cs-infrastructure-utility</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
