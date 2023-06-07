@@ -1,5 +1,6 @@
 package com.lcl.galaxy.outsouring.hangzhou.event;
 
+import com.lcl.galaxy.cs.infrastructure.id.DistributedId;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,7 +14,7 @@ public class CustomerStaffSyncEvent implements Serializable {
 
     public CustomerStaffSyncEvent(String eventContent){
         this.eventContent = eventContent;
-        this.eventId = Distribute;
+        this.eventId = DistributedId.getInstance().getFastSimpleUUID();
         this.eventTime = new Date();
     }
 }

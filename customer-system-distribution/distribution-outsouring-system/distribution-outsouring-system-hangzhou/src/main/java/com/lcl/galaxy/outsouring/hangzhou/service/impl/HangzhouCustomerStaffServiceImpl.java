@@ -1,9 +1,11 @@
 package com.lcl.galaxy.outsouring.hangzhou.service.impl;
 
 import com.lcl.galaxy.outsouring.hangzhou.entity.HangzhouCustomerStaff;
+import com.lcl.galaxy.outsouring.hangzhou.event.CustomerStaffSyncEvent;
 import com.lcl.galaxy.outsouring.hangzhou.repository.HangzhouCustomerStaffRepository;
 import com.lcl.galaxy.outsouring.hangzhou.service.HangzhouCustomerStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -15,9 +17,13 @@ public class HangzhouCustomerStaffServiceImpl implements HangzhouCustomerStaffSe
     @Autowired
     HangzhouCustomerStaffRepository customerStaffRepository;
 
+    @Autowired
+    private ApplicationEventPublisher publisher;
+
     @Override
     public List<HangzhouCustomerStaff> findAllCustomerStaffs() {
-
+        CustomerStaffSyncEvent customerStaffSyncEvent = new CustomerStaffSyncEvent("findAllCustomerStaffs");
+        publisher.publishEvent(customerStaffSyncEvent);
         return customerStaffRepository.findByIsDeletedFalse();
     }
 
