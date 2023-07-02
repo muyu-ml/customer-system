@@ -43,3 +43,8 @@ mybatis-plus:
 logging:
   level:
     com.lcl.galaxy.distribution.im.server: INFO
+
+rocketmq:
+  producer:
+    group: producer_im
+  name-server: 192.168.124.13:9876
