@@ -9,6 +9,7 @@ import com.lcl.galaxy.cs.infrastructure.page.PageObject;
 import com.lcl.galaxy.customer.service.provider.entity.staff.CustomerStaff;
 import com.lcl.galaxy.customer.service.provider.entity.tenant.OutsourcingSystem;
 import com.lcl.galaxy.customer.service.provider.event.CustomerStaffChangedEventProducer;
+import com.lcl.galaxy.customer.service.provider.event.CustomerStaffChangedTagEventProducer;
 import com.lcl.galaxy.customer.service.provider.intergation.CustomerStaffIntergationClient;
 import com.lcl.galaxy.customer.service.provider.mapper.CustomerStaffMapper;
 import com.lcl.galaxy.customer.service.provider.service.ICustomerStaffService;
@@ -40,6 +41,8 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     private CustomerStaffIntergationClient customerStaffIntergationClient;
     @Autowired
     private CustomerStaffChangedEventProducer customerStaffChangedEventProducer;
+    @Autowired
+    private CustomerStaffChangedTagEventProducer tagEventProducer;
 
     // 使用 baseMapper 操作数据库
     @Override
@@ -66,13 +69,13 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
 
     @Override
     public Boolean createCustomerStaff(CustomerStaff customerStaff) throws BizException {
-        customerStaffChangedEventProducer.sendCustomerStaffChangedEvent(customerStaff, "CREATE");
+        tagEventProducer.sendCustomerStaffChangedEvent(customerStaff, "CREATE");
         return this.save(customerStaff);
     }
 
     @Override
     public Boolean updateCustomerStaff(CustomerStaff customerStaff) {
-        customerStaffChangedEventProducer.sendCustomerStaffChangedEvent(customerStaff, "UPDATE");
+        tagEventProducer.sendCustomerStaffChangedEvent(customerStaff, "UPDATE");
         return this.updateById(customerStaff);
     }
 

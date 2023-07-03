@@ -45,4 +45,5 @@ logging:
     com.lcl.galaxy.distribution.im.server: INFO
 
 rocketmq:
-  name-server: 192.168.124.13:9876
+  name-server: 172.20.10.13:9876
+  #name-server: 192.168.249.130:9876

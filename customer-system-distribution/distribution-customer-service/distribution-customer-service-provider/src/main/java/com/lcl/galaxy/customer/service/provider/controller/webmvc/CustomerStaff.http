@@ -1,4 +1,4 @@
-POST localhost:8081/customerStaffs/
+POST localhost:8002/customerStaffs/
 Content-Type: application/json
 
 {
@@ -17,7 +17,7 @@ Content-Type: application/json
 
 #####
 
-PUT localhost:8081/customerStaffs/
+PUT localhost:8002/customerStaffs/
 Content-Type: application/json
 
 
@@ -34,7 +34,7 @@ Content-Type: application/json
 
 ###
 
-PUT localhost:8081/customerStaffs/status
+PUT localhost:8002/customerStaffs/status
 Content-Type: application/json
 
 {
@@ -44,28 +44,28 @@ Content-Type: application/json
 
 ###
 
-GET localhost:8081/customerStaffs/1
+GET localhost:8002/customerStaffs/1
 Content-Type: application/json
 
 ###
 
 
-GET localhost:8081/customerStaffs/async/1
+GET localhost:8002/customerStaffs/async/1
 Content-Type: application/json
 
 ###
 
-GET localhost:8081/customerStaffs/page/2/1
+GET localhost:8002/customerStaffs/page/2/1
 Content-Type: application/json
 
 ###
 
-DELETE localhost:8081/customerStaffs/1
+DELETE localhost:8002/customerStaffs/1
 Content-Type: application/json
 
 ###
 
-GET localhost:8081/customerStaffs/sync/1
+GET localhost:8002/customerStaffs/sync/1
 Content-Type: application/json
 
 ###
