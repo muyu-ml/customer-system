@@ -18,6 +18,11 @@ public class MockLoginServiceImpl implements LoginService {
     }
 
     @Override
+    public void logout(String userId) {
+        loginMap.remove(userId);
+    }
+
+    @Override
     public boolean hasLogin(String userId) {
         return loginMap.containsKey(userId);
     }
@@ -25,5 +30,10 @@ public class MockLoginServiceImpl implements LoginService {
     @Override
     public IMLoginRequest getLoginInfo(String userId) {
         return loginMap.get(userId);
+    }
+
+    @Override
+    public Map<String, IMLoginRequest> getAllIMLoginRequests() {
+        return loginMap;
     }
 }

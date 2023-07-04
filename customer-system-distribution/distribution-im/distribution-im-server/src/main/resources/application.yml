@@ -47,5 +47,5 @@ logging:
 rocketmq:
   producer:
     group: producer_im
-  name-server: 172.20.10.13:9876
+  name-server: 10.136.214.110:9876
   #name-server: 192.168.249.130:9876
