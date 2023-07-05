@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "userId" : "100",
-  "staffId" : "zhangsan",
+  "staffId" : "57",
   "inquire" : "你好，测试"
 }
 

@@ -5,6 +5,7 @@ import com.lcl.galaxy.distribution.ticket.service.ILocalCustomerStaffService;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class CustomerStaffConsumer implements RocketMQListener<CustomerStaffChangedEvent> {
 
     @Autowired
+    @Qualifier("redis")
     private ILocalCustomerStaffService localCustomerStaffService;
 
     @Override
