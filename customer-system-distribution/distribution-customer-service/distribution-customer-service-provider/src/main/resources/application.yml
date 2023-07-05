@@ -27,6 +27,25 @@ spring:
           url: jdbc:mysql://192.168.249.130:3306/customer_system?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
           username: root
           password: root
+  cache:
+    type: redis
+    redis:
+      time-to-live: 20000 # 缓存超时时间 单位：ms
+      cache-null-values: false # 是否缓存空值
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    connect-timeout: 10000
+    database: 0
+
+
+
 mybatis-plus:
   mapper-locations: classpath:mapperXml/*.xml
   configuration:

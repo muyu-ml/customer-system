@@ -3,12 +3,13 @@ package com.lcl.galaxy.cs.infrastructure.page;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
 @ToString
 @Accessors(chain = true)
-public class PageObject<T> {
+public class PageObject<T> implements Serializable {
     private Long total;
 
     private Long pageIndex;

@@ -7,12 +7,17 @@ import com.lcl.galaxy.cs.infrastructure.page.PageObject;
 import com.lcl.galaxy.customer.service.provider.entity.tenant.OutsourcingSystem;
 import com.lcl.galaxy.customer.service.provider.mapper.OutsourcingSystemMapper;
 import com.lcl.galaxy.customer.service.provider.service.IOutsourcingSystemService;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
 @Service
+@CacheConfig(cacheNames = "outsourcing-system-object")
 public class OutsourcingSystemServiceImpl extends ServiceImpl<OutsourcingSystemMapper, OutsourcingSystem> implements IOutsourcingSystemService {
     @Override
     public List<OutsourcingSystem> findAllOutsourcingSystems() {
@@ -21,6 +26,7 @@ public class OutsourcingSystemServiceImpl extends ServiceImpl<OutsourcingSystemM
     }
 
     @Override
+    @Cacheable(value = "pageObject", key = "#root.targetClass + '_' + #p0 + '_' + #p1")
     public PageObject<OutsourcingSystem> findPagedOutsourcingSystems(Long pageSize, Long pageIndex) {
         PageObject<OutsourcingSystem> pageObject = new PageObject<>();
         IPage<OutsourcingSystem> pageResult = baseMapper.findPagedOutsourcingSystems(pageSize, pageIndex);
@@ -30,21 +36,25 @@ public class OutsourcingSystemServiceImpl extends ServiceImpl<OutsourcingSystemM
     }
 
     @Override
+    @Cacheable(key = "#root.targetClass + '_' + #systemId")
     public OutsourcingSystem findOutsourcingSystemById(Long systemId) {
         return baseMapper.selectById(systemId);
     }
 
     @Override
+    @CachePut(key = "#root.targetClass + '_' + #outsourcingSystem.id")
     public Boolean addOutsourcingSystem(OutsourcingSystem outsourcingSystem) {
         return this.save(outsourcingSystem);
     }
 
     @Override
+    @CachePut(key = "#root.targetClass + '_' + #outsourcingSystem.id")
     public Boolean updateOutsourcingSystem(OutsourcingSystem outsourcingSystem) {
         return this.updateById(outsourcingSystem);
     }
 
     @Override
+    @CacheEvict(key = "#root.targetClass + '_' + #systemId")
     public Boolean deleteOutsourcingSystemById(Long systemId) {
         baseMapper.deleteById(systemId);
         return true;
