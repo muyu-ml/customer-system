@@ -32,4 +32,9 @@ public class LocalCustomerStaffServiceImpl extends ServiceImpl<LocalCustomerStaf
 
         localCustomerStaffMapper.deleteById(localCustomerStaff);
     }
+
+    @Override
+    public LocalCustomerStaff findLocalCustomerStaffByStaffId(Long staffId) {
+        return localCustomerStaffMapper.findLocalCustomerStaffByStaffId(staffId);
+    }
 }

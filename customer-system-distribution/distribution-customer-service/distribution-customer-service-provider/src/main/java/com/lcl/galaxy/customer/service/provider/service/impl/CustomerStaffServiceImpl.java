@@ -69,8 +69,9 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
 
     @Override
     public Boolean createCustomerStaff(CustomerStaff customerStaff) throws BizException {
+        this.save(customerStaff);
         tagEventProducer.sendCustomerStaffChangedEvent(customerStaff, "CREATE");
-        return this.save(customerStaff);
+        return true;
     }
 
     @Override

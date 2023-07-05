@@ -27,6 +27,18 @@ spring:
           url: jdbc:mysql://192.168.249.130:3306/customer_ticket?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
           username: root
           password: root
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    connect-timeout: 10000
+    database: 0
+
 mybatis-plus:
   mapper-locations: classpath:mapperXml/*.xml
   configuration:
@@ -45,5 +57,5 @@ logging:
     com.lcl.galaxy.distribution.im.server: INFO
 
 rocketmq:
-  name-server: 172.20.10.13:9876
+  name-server: 10.136.214.110:9876
   #name-server: 192.168.249.130:9876

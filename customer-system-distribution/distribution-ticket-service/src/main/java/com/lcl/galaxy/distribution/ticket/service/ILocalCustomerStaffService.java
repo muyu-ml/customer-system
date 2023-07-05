@@ -9,4 +9,6 @@ public interface ILocalCustomerStaffService {
     void updateLocalCustomerStaff(LocalCustomerStaff localCustomerStaff);
 
     void deleteLocalCustomerStaff(LocalCustomerStaff localCustomerStaff);
+
+    LocalCustomerStaff findLocalCustomerStaffByStaffId(Long staffId);
 }
