@@ -12,5 +12,5 @@ public interface LocalCustomerStaffRedisRepository {
 
     LocalCustomerStaff findLocalCustomerStaffByStaffId(String staffId);
 
-
+    void saveEmptyCustomerStaff(String staffId);
 }
