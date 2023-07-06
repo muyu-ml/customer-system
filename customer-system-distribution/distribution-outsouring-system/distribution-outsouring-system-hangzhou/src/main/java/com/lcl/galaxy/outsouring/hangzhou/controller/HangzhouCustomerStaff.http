@@ -18,3 +18,7 @@ Content-Type: application/json
   "nickname": "tianyalan",
   "gender": "MALE"
 }
+
+###
+POST localhost:10003/customerStaffs/hangzhou/test/
+Content-Type: application/json
