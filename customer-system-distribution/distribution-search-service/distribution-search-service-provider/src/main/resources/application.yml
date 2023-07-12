@@ -52,4 +52,4 @@ elasticsearch:
 
 logging:
     level:
-      org.geekbang.projects.cs: INFO
+      com.lcl.projects.cs: INFO

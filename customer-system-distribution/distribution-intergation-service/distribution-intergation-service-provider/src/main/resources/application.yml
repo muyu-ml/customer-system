@@ -19,12 +19,12 @@ dubbo:
     address: zookeeper://192.168.249.130:2181
     file: /Users/conglongli/Documents/workspace/customer-system/customer-system-distribution/dubbo-log
   scan:
-    base-packages: org.geekbang.projects.cs
+    base-packages: com.lcl.projects.cs
 integration:
   service:
     version: 1.0.0
 
 logging:
     level:
-      org.geekbang.projects.cs: INFO
+      com.lcl.projects.cs: INFO
 
