@@ -1,6 +1,6 @@
 package com.lcl.galaxy.microservice.frontend.ticket.controller;
 
-import com.lcl.galaxy.cs.infrastructure.vo.Result;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.vo.Result;
 import com.lcl.galaxy.microservice.frontend.ticket.controller.vo.AddTicketReqVO;
 import com.lcl.galaxy.microservice.frontend.ticket.service.ICustomerTicketService;
 import org.springframework.beans.factory.annotation.Autowired;

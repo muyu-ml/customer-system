@@ -59,21 +59,6 @@ mybatis-plus:
       # 逻辑删除字面值：删除为1
       logic-delete-value: 1
 
-#dubbo:
-#  protocol:
-#    name: dubbo
-#    port: -1
-#  registry:
-#    address: zookeeper://192.168.249.130:2181
-#    file: /Users/conglongli/Documents/workspace/customer-system/customer-system-microservice/dubbo-log
-#  scan:
-#    base-packages: com.lcl.galaxy.customer.service.provider.rpc
-integration:
-  service:
-    version: 1.0.0
-customer:
-  service:
-    version: 1.0.0
 
 logging:
     level:

@@ -1,6 +1,6 @@
 package com.lcl.galaxy.outsouring.shanghai.controller;
 
-import com.lcl.galaxy.cs.infrastructure.vo.Result;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.vo.Result;
 import com.lcl.galaxy.outsouring.shanghai.controller.vo.req.ShanghaiCustomerStaffCreateReqVO;
 import com.lcl.galaxy.outsouring.shanghai.controller.vo.req.ShanghaiCustomerStaffUpdateReqVO;
 import com.lcl.galaxy.outsouring.shanghai.controller.vo.resp.ShanghaiCustomerStaffRespVO;

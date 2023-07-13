@@ -1,6 +1,6 @@
 package com.lcl.galaxy.outsouring.hangzhou.event;
 
-import com.lcl.galaxy.cs.infrastructure.id.DistributedId;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.id.DistributedId;
 import lombok.Data;
 
 import java.io.Serializable;

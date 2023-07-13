@@ -23,6 +23,10 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: Asia/Shanghai
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.249.130:8848
   datasource:
     # Spring 数据源配置方式
     #    driver-class-name: com.mysql.cj.jdbc.Driver

@@ -31,13 +31,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.lcl.galaxy</groupId>
-			<artifactId>microservice-intergation-service</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
@@ -120,29 +113,6 @@
 			<artifactId>mapstruct-processor</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.dubbo</groupId>
-			<artifactId>dubbo-spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.dubbo</groupId>
-			<artifactId>dubbo-dependencies-zookeeper</artifactId>
-			<type>pom</type>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!--替换curator默认版本，确保和Zookeeper服务器兼容-->
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-framework</artifactId>
-			<version>4.2.0</version>
-		</dependency>
 	</dependencies>
 
 	<build>

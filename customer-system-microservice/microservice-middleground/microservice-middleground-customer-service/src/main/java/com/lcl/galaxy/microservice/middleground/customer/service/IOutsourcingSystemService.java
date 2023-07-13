@@ -1,6 +1,6 @@
 package com.lcl.galaxy.microservice.middleground.customer.service;
 
-import com.lcl.galaxy.cs.infrastructure.page.PageObject;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.page.PageObject;
 import com.lcl.galaxy.microservice.middleground.customer.entity.tenant.OutsourcingSystem;
 
 import java.util.List;

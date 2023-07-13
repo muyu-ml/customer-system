@@ -1,7 +1,7 @@
 package com.lcl.galaxy.outsouring.hangzhou.service.impl;
 
-import com.lcl.galaxy.cs.infrastructure.exception.BizException;
-import com.lcl.galaxy.cs.infrastructure.exception.MessageCode;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.exception.BizException;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.exception.MessageCode;
 import com.lcl.galaxy.outsouring.hangzhou.entity.HangzhouCustomerStaff;
 import com.lcl.galaxy.outsouring.hangzhou.event.CustomerStaffSyncEvent;
 import com.lcl.galaxy.outsouring.hangzhou.repository.HangzhouCustomerStaffRepository;

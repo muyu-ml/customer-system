@@ -6,7 +6,7 @@ import com.lcl.galaxy.outsouring.hangzhou.controller.vo.resp.HangzhouCustomerSta
 import com.lcl.galaxy.outsouring.hangzhou.converter.HangzhouCustomerStaffConverter;
 import com.lcl.galaxy.outsouring.hangzhou.entity.HangzhouCustomerStaff;
 import com.lcl.galaxy.outsouring.hangzhou.service.HangzhouCustomerStaffService;
-import com.lcl.galaxy.cs.infrastructure.vo.Result;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.vo.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

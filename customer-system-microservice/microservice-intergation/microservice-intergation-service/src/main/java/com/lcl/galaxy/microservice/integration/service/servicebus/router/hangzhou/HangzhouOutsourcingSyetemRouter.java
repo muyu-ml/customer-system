@@ -1,6 +1,6 @@
 package com.lcl.galaxy.microservice.integration.service.servicebus.router.hangzhou;
 
-import com.lcl.galaxy.cs.infrastructure.vo.Result;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.vo.Result;
 import com.lcl.galaxy.microservice.integration.service.servicebus.router.OutsourcingSystemRouter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;

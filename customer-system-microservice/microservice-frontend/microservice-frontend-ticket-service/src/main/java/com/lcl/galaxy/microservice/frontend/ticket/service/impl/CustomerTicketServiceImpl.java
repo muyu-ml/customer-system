@@ -1,9 +1,9 @@
 package com.lcl.galaxy.microservice.frontend.ticket.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.lcl.galaxy.cs.infrastructure.exception.BizException;
-import com.lcl.galaxy.cs.infrastructure.exception.MessageCode;
-import com.lcl.galaxy.cs.infrastructure.id.DistributedId;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.exception.BizException;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.exception.MessageCode;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.id.DistributedId;
 import com.lcl.galaxy.microservice.frontend.ticket.controller.vo.AddTicketReqVO;
 import com.lcl.galaxy.microservice.frontend.ticket.converter.CustomerTicketConverter;
 import com.lcl.galaxy.microservice.frontend.ticket.entity.CustomerTicket;

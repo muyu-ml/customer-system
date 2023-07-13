@@ -11,18 +11,6 @@ spring:
   application:
     name: intergation-service
 
-dubbo:
-  protocol:
-    name: dubbo
-    port: -1
-  registry:
-    address: zookeeper://192.168.249.130:2181
-    file: /Users/conglongli/Documents/workspace/customer-system/customer-system-microservice/dubbo-log
-  scan:
-    base-packages: com.lcl.projects.cs
-integration:
-  service:
-    version: 1.0.0
 
 logging:
     level:
