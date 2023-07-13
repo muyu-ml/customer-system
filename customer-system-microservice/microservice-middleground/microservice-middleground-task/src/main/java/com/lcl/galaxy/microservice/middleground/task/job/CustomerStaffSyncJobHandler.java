@@ -1,6 +1,6 @@
 package com.lcl.galaxy.microservice.middleground.task.job;
 
-import com.lcl.galaxy.microservice.middleground.task.client.CustomerStaffServiceClient;
+import com.lcl.galaxy.microservice.middleground.task.client.CustomerStaffSyncClient;
 import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.context.XxlJobHelper;
 import com.xxl.job.core.handler.annotation.XxlJob;
@@ -11,9 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class CustomerStaffSyncJobHandler {
+//
+//    @Autowired
+//    private CustomerStaffServiceClient customerStaffServiceClient;
 
     @Autowired
-    private CustomerStaffServiceClient customerStaffServiceClient;
+    private CustomerStaffSyncClient customerStaffSyncClient;
 
     @XxlJob("syncCustomerStaffJob")
     public ReturnT<String> syncCustomerStaff() throws Exception{
@@ -22,7 +25,7 @@ public class CustomerStaffSyncJobHandler {
         String param = XxlJobHelper.getJobParam();
         Long systemId = Long.parseLong(param);
         // 远程调用，获取客服信息并保存
-        customerStaffServiceClient.syncGetOutsourcingCustomerStaffBySystemId(systemId);
+        customerStaffSyncClient.syncOutsourcingCustomerStaffsBySystemId(systemId);
         return ReturnT.SUCCESS;
     }
 }

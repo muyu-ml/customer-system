@@ -68,8 +68,11 @@ mybatis-plus:
 
 
 logging:
-    level:
-      com.lcl.projects.cs: INFO
+  level:
+    com:
+      lcl:
+        galaxy:
+          microservice: DEBUG
 
 rocketmq:
   producer:
