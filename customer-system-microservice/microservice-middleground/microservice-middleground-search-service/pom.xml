@@ -15,8 +15,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>microservice-middleground-search-service-definition</module>
-        <module>microservice-middleground-search-service-provider</module>
+        <module>microservice-middleground-search-definition</module>
+        <module>microservice-middleground-search-provider</module>
     </modules>
 
 

@@ -30,39 +30,8 @@ spring:
         namespace: dae2f8c4-a44a-4143-afc5-1f8aaa84c72c
         group: LCL_GALAXY_GROUP
         cluster-name: beijing
-  datasource:
-    # Spring 数据源配置方式
-    #    driver-class-name: com.mysql.cj.jdbc.Driver
-    #    url: jdbc:mysql://192.168.249.130:3306/customer_system
-    #    username: root
-    #    password: root
-    dynamic:
-      primary: master
-      druid:
-        initial-size: 3
-        min-idle: 3
-        max-active: 40
-        max-wait: 60000
-      datasource:
-        master:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://192.168.249.130:3306/customer_system?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
-          username: root
-          password: root
   application:
     name: middleground-task
-mybatis-plus:
-  mapper-locations: classpath:mappers/*.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-#  global-config:
-#    db-config:
-#      # 逻辑删除字段名
-#      logic-delete-field: is_deleted
-#      # 逻辑删除字面值：未删除为0
-#      logic-not-delete-value: 0
-#      # 逻辑删除字面值：删除为1
-#      logic-delete-value: 1
 
 info:
   app:
@@ -82,13 +51,6 @@ management:
     web:
       exposure:
         include: '*'
-
----
-spring:
-  boot:
-    admin:
-      client:
-        url: http://localhost:9000
 
 xxl:
   job:

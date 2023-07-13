@@ -15,12 +15,12 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>microservice-middleground-message-service-definition</module>
-        <module>microservice-middleground-message-service-common</module>
-        <module>microservice-middleground-message-service-traditional</module>
-        <module>microservice-middleground-message-service-sharding</module>
-        <module>microservice-middleground-message-service-readwrite-spliting</module>
-        <module>microservice-middleground-message-service-encryption</module>
+        <module>microservice-middleground-message-definition</module>
+        <module>microservice-middleground-message-common</module>
+        <module>microservice-middleground-message-traditional</module>
+        <module>microservice-middleground-message-sharding</module>
+        <module>microservice-middleground-message-readwrite-spliting</module>
+        <module>microservice-middleground-message-encryption</module>
     </modules>
 
 

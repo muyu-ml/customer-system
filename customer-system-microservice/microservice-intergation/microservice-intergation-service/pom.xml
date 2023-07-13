@@ -20,15 +20,21 @@
 		<dependency>
 			<groupId>com.lcl.galaxy</groupId>
 			<artifactId>microservice-infrastructure-utility</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${project.parent.version}</version>
 			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>com.lcl.galaxy</groupId>
-			<artifactId>microservice-intergation-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>microservice-intergation-esb</artifactId>
+			<version>${project.parent.version}</version>
 		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>com.lcl.galaxy</groupId>-->
+<!--			<artifactId>microservice-intergation-api</artifactId>-->
+<!--			<version>${project.parent.version}</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -125,11 +131,6 @@
 <!--			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
 <!--			<optional>true</optional>-->
 <!--		</dependency>-->
-
-		<dependency>
-			<groupId>com.alibaba.cloud</groupId>
-			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-		</dependency>
 	</dependencies>
 
 	<profiles>
