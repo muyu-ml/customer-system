@@ -9,11 +9,14 @@ management:
 
 spring:
   application:
-    name: customer-service
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: 192.168.249.130:8848
+    name: middleground-customer-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.249.130:8848
+        namespace: dae2f8c4-a44a-4143-afc5-1f8aaa84c72c
+        group: LCL_GALAXY_GROUP
+        cluster-name: beijing
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: Asia/Shanghai

@@ -10,13 +10,16 @@ management:
 spring:
   application:
     name: intergation-service
-#  profiles:
-#    active: @spring.profiles.active@
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: @spring.cloud.nacos.discovery.server-addr@
-#        enabled: true
+  profiles:
+    active: @spring.profiles.active@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: @spring.cloud.nacos.discovery.server-addr@
+        enabled: true
+        cluster-name: beijing
+        group: LCL_GALAXY_GROUP
+        namespace:  @spring.cloud.nacos.discovery.namespace@
 #    config:
 #      server-addr: 192.168.249.130:8848
 
