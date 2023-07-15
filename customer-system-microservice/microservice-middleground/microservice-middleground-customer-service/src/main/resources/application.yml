@@ -79,3 +79,6 @@ rocketmq:
     group: producer_customstaff_changed
   name-server: 10.136.214.110:9876
   #name-server: 192.168.249.130:9876
+
+tag:
+  cs
