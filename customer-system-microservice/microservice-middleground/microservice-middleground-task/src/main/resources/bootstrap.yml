@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: middleground-task
+  profiles:
+    active: local
+  cloud:
+    nacos:
+      config:
+        server-addr: @spring.cloud.nacos.config.server-addr@
+        file-extension: yml
+        refresh-enabled: true
+        namespace: @spring.cloud.nacos.discovery.namespace@
+        group: LCL_GALAXY_GROUP
+      discovery:
+        server-addr: @spring.cloud.nacos.discovery.server-addr@
+        namespace: @spring.cloud.nacos.discovery.namespace@
+        group: LCL_GALAXY_GROUP
+        cluster-name: beijing

@@ -91,11 +91,16 @@
             <optional>true</optional>
         </dependency>
 
-        <!--		<dependency>-->
-        <!--			<groupId>com.alibaba.cloud</groupId>-->
-        <!--			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
-        <!--			<optional>true</optional>-->
-        <!--		</dependency>-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -120,6 +125,48 @@
             </snapshots>
         </repository>
     </repositories>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <spring.cloud.nacos.discovery.server-addr>192.168.249.130:8848</spring.cloud.nacos.discovery.server-addr>
+                <spring.cloud.nacos.config.server-addr>192.168.249.130:8848</spring.cloud.nacos.config.server-addr>
+                <spring.profiles.active>local</spring.profiles.active>
+                <spring.cloud.nacos.discovery.namespace>dae2f8c4-a44a-4143-afc5-1f8aaa84c72c</spring.cloud.nacos.discovery.namespace>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <spring.cloud.nacos.discovery.server-addr>192.168.249.130:8848</spring.cloud.nacos.discovery.server-addr>
+                <spring.cloud.nacos.config.server-addr>192.168.249.130:8848</spring.cloud.nacos.config.server-addr>
+                <spring.profiles.active>dev</spring.profiles.active>
+                <spring.cloud.nacos.discovery.namespace>b5b0791d-acb0-462e-9513-facb051a505f</spring.cloud.nacos.discovery.namespace>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <spring.cloud.nacos.discovery.server-addr>192.168.249.130:8848</spring.cloud.nacos.discovery.server-addr>
+                <spring.cloud.nacos.config.server-addr>192.168.249.130:8848</spring.cloud.nacos.config.server-addr>
+                <spring.profiles.active>test</spring.profiles.active>
+                <spring.cloud.nacos.discovery.namespace>734d2b15-9c71-4b61-bd52-67eec39e2774</spring.cloud.nacos.discovery.namespace>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.cloud.nacos.discovery.server-addr>192.168.249.130:8848</spring.cloud.nacos.discovery.server-addr>
+                <spring.cloud.nacos.config.server-addr>192.168.249.130:8848</spring.cloud.nacos.config.server-addr>
+                <spring.profiles.active>prod</spring.profiles.active>
+                <spring.cloud.nacos.discovery.namespace>9b03f190-07c9-4fd7-bdc5-14f8f61bffb2</spring.cloud.nacos.discovery.namespace>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
