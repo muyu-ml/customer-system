@@ -9,9 +9,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.lcl.galaxy</groupId>
     <artifactId>outsouring-system-microservice-hangzhou</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <description>杭州外包客服系统</description>
 

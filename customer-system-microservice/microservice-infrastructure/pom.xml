@@ -6,13 +6,9 @@
         <groupId>com.lcl.galaxy</groupId>
         <artifactId>custemsystem-microservice</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>microservice-infrastructure</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
-    <description>工具类项目</description>
 
     <modules>
         <module>microservice-infrastructure-utility</module>

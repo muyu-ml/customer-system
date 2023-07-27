@@ -6,12 +6,9 @@
         <groupId>com.lcl.galaxy</groupId>
         <artifactId>microservice-middleground</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.lcl.galaxy</groupId>
+
     <artifactId>microservice-middleground-search-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
 
     <modules>

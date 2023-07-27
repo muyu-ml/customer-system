@@ -8,10 +8,8 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.lcl.galaxy</groupId>
+
     <artifactId>microservice-middleground-task</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>${project.artifactId}</name>
     <description>客服系统分布式工程</description>
 
     <dependencies>

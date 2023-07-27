@@ -6,14 +6,10 @@
         <groupId>com.lcl.galaxy</groupId>
         <artifactId>custemsystem-microservice</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.lcl.galaxy</groupId>
+
     <artifactId>outsouring-system-microservice</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
-    <description>外包客服系统工程</description>
 
     <modules>
         <module>outsouring-system-microservice-beijing</module>

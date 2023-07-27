@@ -6,14 +6,9 @@
         <groupId>com.lcl.galaxy</groupId>
         <artifactId>custemsystem-microservice</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.lcl.galaxy</groupId>
     <artifactId>microservice-frontend</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>${project.artifactId}</name>
     <packaging>pom</packaging>
-    <description>客服系统分布式工程</description>
 
     <modules>
         <module>microservice-frontend-chat-service</module>
