@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.lcl.galaxy.microservice.middleground.customer.event.stream.CustomerStaffChangedEventStreamProducer;
 import com.lcl.galaxy.microservice.middleground.task.infrastructure.exception.BizException;
 import com.lcl.galaxy.microservice.middleground.task.infrastructure.page.PageObject;
 import com.lcl.galaxy.microservice.middleground.customer.intergation.CustomerStaffIntergationClient;
@@ -43,6 +44,8 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     private CustomerStaffChangedEventProducer customerStaffChangedEventProducer;
     @Autowired
     private CustomerStaffChangedTagEventProducer tagEventProducer;
+    @Autowired
+    private CustomerStaffChangedEventStreamProducer customerStaffChangedEventStreamProducer;
 
     // 使用 baseMapper 操作数据库
     @Override
@@ -70,14 +73,18 @@ public class CustomerStaffServiceImpl extends ServiceImpl<CustomerStaffMapper, C
     @Override
     public Boolean createCustomerStaff(CustomerStaff customerStaff) throws BizException {
         this.save(customerStaff);
-        tagEventProducer.sendCustomerStaffChangedEvent(customerStaff, "CREATE");
+        //tagEventProducer.sendCustomerStaffChangedEvent(customerStaff, "CREATE");
+        customerStaffChangedEventStreamProducer.sendCustomerStaffChangedEvent(customerStaff, "CREATE");
         return true;
     }
 
     @Override
     public Boolean updateCustomerStaff(CustomerStaff customerStaff) {
+        boolean updated = this.updateById(customerStaff);
         tagEventProducer.sendCustomerStaffChangedEvent(customerStaff, "UPDATE");
-        return this.updateById(customerStaff);
+        // customerStaffChangedEventProducer.sendCustomerStaffChangedEvent(customerStaff, "UPDATE");
+        customerStaffChangedEventStreamProducer.sendCustomerStaffChangedEvent(customerStaff, "UPDATE");
+        return updated;
     }
 
     @Override

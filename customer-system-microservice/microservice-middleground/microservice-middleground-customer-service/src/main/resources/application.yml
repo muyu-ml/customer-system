@@ -82,3 +82,16 @@
 #
 #tag:
 #  cs
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: localhost:9876 # 指定RocketMQ NameServer
+        bindings:
+          customer-staff-change-stream-out: # Source
+            producer:
+              group: producer_customstaff_changed_stream # 指定生产者组
+      bindings:
+        customer-staff-change-stream-out:
+          destination: topic_staff_stream # 指定Topic

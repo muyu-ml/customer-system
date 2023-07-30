@@ -9,7 +9,7 @@ management:
 
 spring:
   application:
-    name: im-server
+    name: ticket-service
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: Asia/Shanghai
@@ -57,5 +57,18 @@ logging:
     com.lcl.galaxy.microservice.im.server: INFO
 
 rocketmq:
-  name-server: 10.136.214.110:9876
+  name-server: 10.136.213.206:9876
   #name-server: 192.168.249.130:9876
+---
+spring:
+  cloud:
+    stream:
+      function:
+        definition: staffChangedEventConsumer
+      rocketmq:
+        binder:
+          name-server: localhost:9876 # 指定RocketMQ NameServer
+      bindings:
+        staffChangedEventConsumer-in-0: # Sink
+          destination: topic_staff_stream # 指定Topic
+          group: consumer_group_staff_changed_stream # 指定消息分组
