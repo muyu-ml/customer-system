@@ -1,61 +1,13 @@
 server:
   port: 9004
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
 spring:
   application:
-    name: im-server
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: Asia/Shanghai
-  datasource:
-    dynamic:
-      primary: master
-      druid:
-        initial-size: 3
-        min-idle: 3
-        max-active: 40
-        max-wait: 60000
-      datasource:
-        master:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://192.168.249.130:3306/customer_ticket?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
-          username: root
-          password: root
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    lettuce:
-      pool:
-        max-active: 8
-        max-wait: -1
-        max-idle: 8
-        min-idle: 0
-    connect-timeout: 10000
-    database: 0
-
-mybatis-plus:
-  mapper-locations: classpath:mapperXml/*.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-    db-config:
-      # ???????
-      logic-delete-field: is_deleted
-      # ????????????0
-      logic-not-delete-value: 0
-      # ???????????1
-      logic-delete-value: 1
-
-logging:
-  level:
-    com.lcl.galaxy.microservice.im.server: INFO
-
-rocketmq:
-  name-server: 10.136.214.110:9876
-  #name-server: 192.168.249.130:9876
+    name: chat-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.249.130:8848
+        namespace: dae2f8c4-a44a-4143-afc5-1f8aaa84c72c
+        group: LCL_GALAXY_GROUP
+        cluster-name: beijing

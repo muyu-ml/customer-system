@@ -1,0 +1,4 @@
+GET http://localhost:9004/chats/
+Accept: application/json
+
+###

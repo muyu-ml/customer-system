@@ -1,71 +1,27 @@
-server:
-  port: 8002
-    
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"  
-
 spring:
-  application:
-    name: customer-service
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: Asia/Shanghai
-  datasource:
-    dynamic:
-      primary: master
-      druid:
-        initial-size: 3
-        min-idle: 3
-        max-active: 40
-        max-wait: 60000
-      datasource:
-        master:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://192.168.249.130:3306/customer_system?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
-          username: root
-          password: root
-  cache:
-    type: redis
-    redis:
-      time-to-live: 20000 # 缓存超时时间 单位：ms
-      cache-null-values: false # 是否缓存空值
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    lettuce:
-      pool:
-        max-active: 8
-        max-wait: -1
-        max-idle: 8
-        min-idle: 0
-    connect-timeout: 10000
-    database: 0
-
-
-
-mybatis-plus:
-  mapper-locations: classpath:mapperXml/*.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-    db-config:
-      # 逻辑删除字段名
-      logic-delete-field: is_deleted
-      # 逻辑删除字面值：未删除为0
-      logic-not-delete-value: 0
-      # 逻辑删除字面值：删除为1
-      logic-delete-value: 1
-
-
-logging:
-    level:
-      com.lcl.projects.cs: INFO
-
-rocketmq:
-  producer:
-    group: producer_customstaff_changed
-  name-server: 10.136.214.110:9876
-  #name-server: 192.168.249.130:9876
+  main:
+    web-application-type: reactive # 以响应式方式运行Web应用，防止与MVC冲突
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能，利用服务名进行路由
+          lower-case-service-id: true # 用小写的请求路径的服务名匹配服务，默认为false
+      routes:
+        - id: baiduroute
+          uri: https://www.baidu.com
+          predicates:
+            - Path=/baidu/**
+        - id: ticket-service
+          uri: lb://ticket-service # 指定URI，集成负载均衡机制
+          predicates:
+            - Path=/ticket/** # 指定谓词，当请求URL中包含 /ticket/**时会被 自动转发到ticket-service
+          filters:
+            - StripPrefix=1
+        - id: chat-service
+          uri: lb://chat-service # 指定URI，集成负载均衡机制
+          predicates:
+            - Path=/chat/** # 指定谓词，当请求URL中包含 /chat/**时会被 自动转发到chat-service
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/chats # 指定过滤器

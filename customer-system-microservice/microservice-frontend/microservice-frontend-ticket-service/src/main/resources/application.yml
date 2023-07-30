@@ -1,5 +1,5 @@
 server:
-  port: 9004
+  port: 9005
 
 management:
   endpoints:
@@ -72,3 +72,9 @@ spring:
         staffChangedEventConsumer-in-0: # Sink
           destination: topic_staff_stream # 指定Topic
           group: consumer_group_staff_changed_stream # 指定消息分组
+    nacos:
+      discovery:
+        server-addr: 192.168.249.130:8848
+        namespace: dae2f8c4-a44a-4143-afc5-1f8aaa84c72c
+        group: LCL_GALAXY_GROUP
+        cluster-name: beijing

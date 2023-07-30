@@ -1,0 +1,23 @@
+###
+GET http://localhost:18080/baidu
+Accept: application/json
+
+###
+# 基于Gateway动态路由：自动通过服务名称来确定服务路由
+GET http://localhost:18080/chat-service/chats/
+Accept: application/json
+
+###
+# 基于Gateway自定义路路由：去掉URI的第一个（chat），然后在URI前面添加chats
+GET http://localhost:18080/chat/
+Accept: application/json
+
+###
+POST http://localhost:18080/ticket-service/customerTickets/
+Content-Type: application/json
+
+{
+  "userId" : "100",
+  "staffId" : "2025",
+  "inquire" : "你好，测试"
+}

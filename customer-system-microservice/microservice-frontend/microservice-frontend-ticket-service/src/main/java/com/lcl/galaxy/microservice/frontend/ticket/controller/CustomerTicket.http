@@ -1,9 +1,9 @@
-POST localhost:9004/customerTickets/
+POST localhost:9005/customerTickets/
 Content-Type: application/json
 
 {
   "userId" : "100",
-  "staffId" : "57",
+  "staffId" : "2025",
   "inquire" : "你好，测试"
 }
 
