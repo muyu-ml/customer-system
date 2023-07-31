@@ -1,6 +1,7 @@
 
 POST localhost:8002/outsourcingSystems/
 Content-Type: application/json
+Authorization: Basic cs_user password1
 
 {
   "systemCode" : "hangzhou",
@@ -27,5 +28,6 @@ Content-Type: application/json
 
 DELETE localhost:8002/outsourcingSystems/1
 Content-Type: application/json
+Authorization: Basic cs_admin password2
 
 ###
