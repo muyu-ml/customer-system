@@ -1,4 +1,4 @@
-package com.lcl.galaxy.microservice.security;
+package com.lcl.galaxy.microservice.security.starter;
 
 //import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
