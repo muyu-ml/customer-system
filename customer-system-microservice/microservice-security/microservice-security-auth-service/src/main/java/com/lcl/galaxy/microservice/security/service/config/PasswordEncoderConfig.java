@@ -1,4 +1,4 @@
-package com.lcl.galaxy.microservice.service.config;
+package com.lcl.galaxy.microservice.security.service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

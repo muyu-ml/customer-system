@@ -1,4 +1,4 @@
-package com.lcl.galaxy.microservice.api;
+package com.lcl.galaxy.microservice.security.api;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

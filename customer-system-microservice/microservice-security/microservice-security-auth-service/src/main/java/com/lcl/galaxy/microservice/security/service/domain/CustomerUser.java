@@ -1,4 +1,4 @@
-package com.lcl.galaxy.microservice.service.domain;
+package com.lcl.galaxy.microservice.security.service.domain;
 
 
 import lombok.Data;

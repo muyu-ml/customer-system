@@ -1,4 +1,4 @@
-package com.lcl.galaxy.microservice.service;
+package com.lcl.galaxy.microservice.security.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

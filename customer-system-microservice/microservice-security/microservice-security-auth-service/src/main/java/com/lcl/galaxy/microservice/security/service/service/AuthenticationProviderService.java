@@ -1,7 +1,7 @@
-package com.lcl.galaxy.microservice.service.service;
+package com.lcl.galaxy.microservice.security.service.service;
 
 
-import com.lcl.galaxy.microservice.service.model.CustomerUserDetails;
+import com.lcl.galaxy.microservice.security.service.model.CustomerUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

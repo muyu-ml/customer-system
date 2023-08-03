@@ -1,6 +1,6 @@
-package com.lcl.galaxy.microservice.service.repository;
+package com.lcl.galaxy.microservice.security.service.repository;
 
-import com.lcl.galaxy.microservice.service.domain.CustomerUser;
+import com.lcl.galaxy.microservice.security.service.domain.CustomerUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

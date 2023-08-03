@@ -1,8 +1,8 @@
-package com.lcl.galaxy.microservice.service.service;
+package com.lcl.galaxy.microservice.security.service.service;
 
-import com.lcl.galaxy.microservice.service.domain.CustomerUser;
-import com.lcl.galaxy.microservice.service.model.CustomerUserDetails;
-import com.lcl.galaxy.microservice.service.repository.CustomerUserRepository;
+import com.lcl.galaxy.microservice.security.service.model.CustomerUserDetails;
+import com.lcl.galaxy.microservice.security.service.domain.CustomerUser;
+import com.lcl.galaxy.microservice.security.service.repository.CustomerUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

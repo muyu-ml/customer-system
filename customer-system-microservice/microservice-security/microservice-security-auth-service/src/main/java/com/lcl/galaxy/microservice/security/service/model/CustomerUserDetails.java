@@ -1,6 +1,6 @@
-package com.lcl.galaxy.microservice.service.model;
+package com.lcl.galaxy.microservice.security.service.model;
 
-import com.lcl.galaxy.microservice.service.domain.CustomerUser;
+import com.lcl.galaxy.microservice.security.service.domain.CustomerUser;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -17,6 +17,7 @@
 		<module>microservice-security-auth-api</module>
 		<module>microservice-security-auth-service</module>
 		<module>microservice-security-auth-starter</module>
+		<module>microservice-security-auth-cache</module>
 	</modules>
 
 </project>
