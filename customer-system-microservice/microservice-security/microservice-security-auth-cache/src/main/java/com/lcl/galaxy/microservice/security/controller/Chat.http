@@ -3,3 +3,6 @@ Accept: application/json
 Authorization: Basic customer Test@123
 
 ###
+GET http://localhost:8080/chats/
+Accept: application/json
+Authorization: Basic manager Test@123

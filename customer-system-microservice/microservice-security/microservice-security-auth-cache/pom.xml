@@ -13,7 +13,8 @@
 	
 	<artifactId>microservice-security-auth-cache</artifactId>
     <packaging>jar</packaging>
-    <name>${project.artifactId}</name>	
+    <name>${project.artifactId}</name>
+	<description>这个项目用来演示Spring Security用户缓存，与整个项目没有实际联系</description>
 
 	<dependencies>
 
