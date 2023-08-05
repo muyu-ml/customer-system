@@ -1,0 +1,14 @@
+logging:
+  level:
+    root: INFO
+    com:
+      lcl:
+        galaxy:
+          microservice:
+            security: DEBUG
+    org:
+      springframework:
+        jdbc: DEBUG
+        security:
+          core:
+            userdetails: DEBUG
