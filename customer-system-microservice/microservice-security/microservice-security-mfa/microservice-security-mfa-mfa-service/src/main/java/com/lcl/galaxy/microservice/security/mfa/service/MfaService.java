@@ -56,10 +56,9 @@ public class MfaService {
             securityCode = new SecurityCode();
             securityCode.setUsername(userCredential.getUsername());
             securityCode.setCode(generateSecurityCode);
-            securityCodeRepository.save(securityCode);
         }else {
             securityCode.setCode(generateSecurityCode);
         }
-
+        securityCodeRepository.save(securityCode);
     }
 }
