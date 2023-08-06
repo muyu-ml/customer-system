@@ -19,6 +19,8 @@
 		<module>microservice-security-auth-starter</module>
 		<module>microservice-security-auth-cache</module>
 		<module>microservice-security-mfa</module>
+		<module>microservice-security-auth-server</module>
+		<module>microservice-security-auth-common</module>
 	</modules>
 
 </project>
