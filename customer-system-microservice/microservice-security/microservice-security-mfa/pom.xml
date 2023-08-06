@@ -6,19 +6,18 @@
 
 	<parent>
 		<groupId>com.lcl.galaxy</groupId>
-		<artifactId>custemsystem-microservice</artifactId>
+		<artifactId>microservice-security</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
     </parent>
 	
-	<artifactId>microservice-security</artifactId>
+	<artifactId>microservice-security-mfa</artifactId>
     <packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<description>该项目是为了演示多因子认证，与整个项目流程无关</description>
 
 	<modules>
-		<module>microservice-security-auth-api</module>
-		<module>microservice-security-auth-service</module>
-		<module>microservice-security-auth-starter</module>
-		<module>microservice-security-auth-cache</module>
-		<module>microservice-security-mfa</module>
+		<module>microservice-security-mfa-login-service</module>
+		<module>microservice-security-mfa-mfa-service</module>
 	</modules>
 
 </project>
