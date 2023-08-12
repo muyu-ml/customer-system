@@ -38,17 +38,17 @@ public class CustomerTicketServiceImpl extends ServiceImpl<CustomerTicketMapper,
         CustomerTicket customerTicket = CustomerTicketConverter.INSTANCE.convertVO(addTicketReqVO);
         customerTicket.setTicketNo(DistributedId.getInstance().getFastSimpleUUID());
 
-        Long staffId = addTicketReqVO.getStaffId();
-
-        //验证输入参数StaffId的正确性
-        if(Objects.isNull(staffId)) {
-            throw new BizException(MessageCode.CHECK_ERROR, "客服编号不能为空");
-        }
-
-        LocalCustomerStaff localCustomerStaff = localCustomerStaffService.findLocalCustomerStaffByStaffId(staffId);
-        if(Objects.isNull(localCustomerStaff)) {
-            throw new BizException(MessageCode.CHECK_ERROR, String.format("客服编号为%s的客服人员不存在", staffId));
-        }
+//        Long staffId = addTicketReqVO.getStaffId();
+//
+//        //验证输入参数StaffId的正确性
+//        if(Objects.isNull(staffId)) {
+//            throw new BizException(MessageCode.CHECK_ERROR, "客服编号不能为空");
+//        }
+//
+//        LocalCustomerStaff localCustomerStaff = localCustomerStaffService.findLocalCustomerStaffByStaffId(staffId);
+//        if(Objects.isNull(localCustomerStaff)) {
+//            throw new BizException(MessageCode.CHECK_ERROR, String.format("客服编号为%s的客服人员不存在", staffId));
+//        }
 
         customerTicketMapper.insert(customerTicket);
     }
