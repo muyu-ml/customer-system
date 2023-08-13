@@ -1,6 +1,9 @@
 package com.lcl.galaxy.microservice.frontend.business.service;
 
 
+import com.alibaba.fastjson2.JSON;
+import com.lcl.galaxy.microservice.frontend.business.action.CreateChatTccAction;
+import com.lcl.galaxy.microservice.frontend.business.action.CreateTicketTccAction;
 import com.lcl.galaxy.microservice.frontend.business.client.ChatClient;
 import com.lcl.galaxy.microservice.frontend.business.client.TicketClient;
 import com.lcl.galaxy.microservice.frontend.business.controller.vo.AddChatReqVO;
@@ -13,9 +16,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class BusinessService {
     @Autowired
-    private ChatClient chatClient;
+    private CreateChatTccAction chatTccAction;
     @Autowired
-    private TicketClient ticketClient;
+    private CreateTicketTccAction ticketTccAction;
 
 
     @GlobalTransactional
@@ -26,11 +29,11 @@ public class BusinessService {
         addTicketReqVO.setStaffId(staffId);
         addTicketReqVO.setInquire(inquire);
         addTicketReqVO.setTicketNo(ticetNo);
-        ticketClient.insertTicket(addTicketReqVO);
+        ticketTccAction.prepare(null, JSON.toJSONString(addTicketReqVO));
 
         AddChatReqVO addChatReqVO = AddChatReqVO.builder().userId(userId)
                 .staffId(staffId).inquire(inquire).ticketNo(ticetNo).build();
-        chatClient.insertChat(addChatReqVO);
+        chatTccAction.prepare(null, JSON.toJSONString(addChatReqVO));
 
     }
 

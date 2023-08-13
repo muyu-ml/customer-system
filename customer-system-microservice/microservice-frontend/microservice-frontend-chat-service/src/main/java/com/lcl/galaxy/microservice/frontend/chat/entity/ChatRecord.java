@@ -41,8 +41,11 @@ public class ChatRecord implements Serializable {
      */
     private String lastMessage;
 
+    private Integer tccStatus;
+
     /**
      * 创建时间
      */
     private LocalDateTime createTime;
+
 }

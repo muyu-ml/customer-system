@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.lcl.galaxy.microservice.frontend.chat.controller.vo.AddChatReqVO;
 import com.lcl.galaxy.microservice.frontend.chat.entity.ChatRecord;
 import com.lcl.galaxy.microservice.middleground.task.infrastructure.exception.BizException;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.tcc.TccRequest;
 
 /**
  * <p>
@@ -12,5 +13,9 @@ import com.lcl.galaxy.microservice.middleground.task.infrastructure.exception.Bi
  */
 public interface IChatRecordService extends IService<ChatRecord> {
 
-    void insertChat(AddChatReqVO addChatReqVO) throws BizException;
+    void insertChat(TccRequest<AddChatReqVO> addChatReqVO) throws BizException;
+
+    void updateChatSuccessStatus(TccRequest<String> ticketNo);
+
+    void updateChatFailStatus(TccRequest<String> ticketNo);
 }

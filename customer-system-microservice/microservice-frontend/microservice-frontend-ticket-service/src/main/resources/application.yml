@@ -24,9 +24,9 @@ spring:
       datasource:
         master:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://192.168.249.130:3306/customer_ticket?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://localhost:3306/customer_ticket_tcc?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
           username: root
-          password: root
+          password: 123456
   redis:
     host: 127.0.0.1
     port: 6379
@@ -81,7 +81,7 @@ spring:
 
 
 seata:
-  enable-auto-data-source-proxy: true # 必须设置为 true，默认为true
+  enable-auto-data-source-proxy: false
   application-id: ${spring.application.name}
   tx-service-group: ticket-service-group
   service:

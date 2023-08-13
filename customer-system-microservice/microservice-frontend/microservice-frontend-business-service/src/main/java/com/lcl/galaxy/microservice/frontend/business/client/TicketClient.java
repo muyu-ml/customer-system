@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "ticket-service")
 public interface TicketClient {
 
-    @PostMapping(value = "/customerTickets/")
-    Result<Boolean> insertTicket(@RequestBody AddTicketReqVO aAddTicketReqVO);
+    @PostMapping(value = "/customerTickets/try")
+    Result<Boolean> ticketTry(@RequestBody TccRequest<AddTicketReqVO> aAddTicketReqVO);
+
+    @PostMapping(value = "/customerTickets/confirm")
+    Result<Boolean> ticketConfirm(@RequestBody TccRequest<String> ticketNo);
+
+    @PostMapping(value = "/customerTickets/cancel")
+    Result<Boolean> ticketCancel(@RequestBody TccRequest<String> ticketNo);
 }

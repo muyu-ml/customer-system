@@ -1,5 +1,6 @@
 package com.lcl.galaxy.microservice.frontend.ticket.controller;
 
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.tcc.TccRequest;
 import com.lcl.galaxy.microservice.middleground.task.infrastructure.vo.Result;
 import com.lcl.galaxy.microservice.frontend.ticket.controller.vo.AddTicketReqVO;
 import com.lcl.galaxy.microservice.frontend.ticket.service.ICustomerTicketService;
@@ -21,10 +22,21 @@ public class CustomerTicketController {
     @Autowired
     private ICustomerTicketService customerTicketService;
 
-    @PostMapping(value = "/")
-    Result<Boolean> insertTicket(@RequestBody AddTicketReqVO addTicketReqVO) {
+    @PostMapping(value = "/try")
+    Result<Boolean> tickeTry(@RequestBody TccRequest<AddTicketReqVO> addTicketReqVO) {
+        customerTicketService.tickeTry(addTicketReqVO);
+        return Result.success(true);
+    }
 
-        customerTicketService.insertTicket(addTicketReqVO);
+    @PostMapping(value = "/confirm")
+    Result<Boolean> ticketConfirm(@RequestBody TccRequest<String> ticketNo) {
+        customerTicketService.ticketConfirm(ticketNo);
+        return Result.success(true);
+    }
+
+    @PostMapping(value = "/cancel")
+    Result<Boolean> ticketCencel(@RequestBody TccRequest<String> ticketNo) {
+        customerTicketService.ticketCencel(ticketNo);
         return Result.success(true);
     }
 }

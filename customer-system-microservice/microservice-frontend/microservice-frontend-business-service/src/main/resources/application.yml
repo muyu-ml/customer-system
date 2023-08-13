@@ -15,7 +15,7 @@ spring:
       server-addr: 192.168.249.130:8848
 
 seata:
-  enable-auto-data-source-proxy: true # 必须设置为 true，默认为true
+  enable-auto-data-source-proxy: false
   application-id: ${spring.application.name}
   tx-service-group: business-service-group
   service:

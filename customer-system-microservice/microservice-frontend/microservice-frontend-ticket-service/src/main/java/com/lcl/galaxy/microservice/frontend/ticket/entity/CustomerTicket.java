@@ -67,4 +67,9 @@ public class CustomerTicket implements Serializable {
      * 更新时间
      */
     private LocalDateTime updateTime;
+
+    /**
+     * TCC执行状态，0：初始化；1：已确认；2：已回滚
+     */
+    private Integer tccStatus;
 }

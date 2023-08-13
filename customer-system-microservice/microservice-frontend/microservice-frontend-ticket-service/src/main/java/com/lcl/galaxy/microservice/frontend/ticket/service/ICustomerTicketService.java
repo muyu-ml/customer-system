@@ -1,9 +1,9 @@
 package com.lcl.galaxy.microservice.frontend.ticket.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.lcl.galaxy.microservice.middleground.task.infrastructure.exception.BizException;
 import com.lcl.galaxy.microservice.frontend.ticket.controller.vo.AddTicketReqVO;
 import com.lcl.galaxy.microservice.frontend.ticket.entity.CustomerTicket;
+import com.lcl.galaxy.microservice.middleground.task.infrastructure.tcc.TccRequest;
 
 /**
  * <p>
@@ -12,5 +12,9 @@ import com.lcl.galaxy.microservice.frontend.ticket.entity.CustomerTicket;
  */
 public interface ICustomerTicketService extends IService<CustomerTicket> {
 
-    void insertTicket(AddTicketReqVO addTicketReqVO) throws BizException;
+    void tickeTry(TccRequest<AddTicketReqVO> addTicketReqVO);
+
+    void ticketConfirm(TccRequest<String> ticketNo);
+
+    void ticketCencel(TccRequest<String> ticketNo);
 }
