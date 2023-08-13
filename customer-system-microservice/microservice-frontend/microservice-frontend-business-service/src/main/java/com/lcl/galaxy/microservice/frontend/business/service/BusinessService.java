@@ -21,8 +21,11 @@ public class BusinessService {
     @GlobalTransactional
     public void initializeCustomerAndTicket(Long userId, Long staffId, String inquire) {
         String ticetNo = DistributedId.getInstance().getFastSimpleUUID();
-        AddTicketReqVO addTicketReqVO = AddTicketReqVO.builder().userId(userId)
-                .staffId(staffId).inquire(inquire).ticketNo(ticetNo).build();
+        AddTicketReqVO addTicketReqVO = new AddTicketReqVO();
+        addTicketReqVO.setUserId(userId);
+        addTicketReqVO.setStaffId(staffId);
+        addTicketReqVO.setInquire(inquire);
+        addTicketReqVO.setTicketNo(ticetNo);
         ticketClient.insertTicket(addTicketReqVO);
 
         AddChatReqVO addChatReqVO = AddChatReqVO.builder().userId(userId)

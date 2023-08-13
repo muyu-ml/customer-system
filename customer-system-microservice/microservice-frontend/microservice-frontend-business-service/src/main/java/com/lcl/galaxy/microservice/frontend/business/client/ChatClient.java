@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(value = "chat-service")
 public interface ChatClient {
 
-    @PostMapping(value = "/chats")
+    @PostMapping(value = "/chatRecords/")
     Result<Boolean> insertChat(@RequestBody AddChatReqVO addChatReqVO);
 }

@@ -78,3 +78,27 @@ spring:
         namespace: dae2f8c4-a44a-4143-afc5-1f8aaa84c72c
         group: LCL_GALAXY_GROUP
         cluster-name: beijing
+
+
+seata:
+  enable-auto-data-source-proxy: true # 必须设置为 true，默认为true
+  application-id: ${spring.application.name}
+  tx-service-group: ticket-service-group
+  service:
+    vgroup-mapping:
+      business-service-group: beijing
+  #    grouplist:
+  #      default: 127.0.0.1:8091
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 192.168.249.130:8848
+      application: seata-server
+      group: SEATA_GROUP
+      namespace: dae2f8c4-a44a-4143-afc5-1f8aaa84c72c
+  config:
+    type: nacos
+    nacos:
+      server-addr: 192.168.249.130:8848
+      group: SEATA_GROUP
+      namespace: dae2f8c4-a44a-4143-afc5-1f8aaa84c72c

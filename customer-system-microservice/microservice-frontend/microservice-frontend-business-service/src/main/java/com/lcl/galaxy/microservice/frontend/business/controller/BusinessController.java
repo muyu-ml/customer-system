@@ -1,7 +1,7 @@
-package com.lcl.galaxy.microservice.frontend.chat.controller;
+package com.lcl.galaxy.microservice.frontend.business.controller;
 
-import com.lcl.galaxy.microservice.frontend.chat.controller.vo.AddChatReqVO;
-import com.lcl.galaxy.microservice.frontend.chat.service.IChatRecordService;
+import com.lcl.galaxy.microservice.frontend.business.controller.vo.AddTicketReqVO;
+import com.lcl.galaxy.microservice.frontend.business.service.BusinessService;
 import com.lcl.galaxy.microservice.middleground.task.infrastructure.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,19 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  */
 @RestController
-@RequestMapping("/chatRecords")
-public class ChatRecordController {
+@RequestMapping("/business")
+public class BusinessController {
 
     @Autowired
-    private IChatRecordService chatRecordService;
+    private BusinessService businessService;
 
     @PostMapping(value = "/")
-    Result<Boolean> insertChat(@RequestBody AddChatReqVO addChatReqVO) {
-        if("123".equals(addChatReqVO.getUserId())){
-            int i = 1/0;
-        }
-        chatRecordService.insertChat(addChatReqVO);
+    Result<Boolean> insertTicket(@RequestBody AddTicketReqVO addTicketReqVO) {
+        businessService.initializeCustomerAndTicket(addTicketReqVO.getUserId(), addTicketReqVO.getStaffId(), addTicketReqVO.getInquire());
         return Result.success(true);
-
     }
 }
