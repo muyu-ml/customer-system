@@ -13,7 +13,6 @@
     <modules>
         <module>microservice-frontend-chat-service</module>
         <module>microservice-frontend-ticket-service</module>
-        <module>microservice-frontend-business-service</module>
     </modules>
 
 

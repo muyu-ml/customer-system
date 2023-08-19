@@ -65,3 +65,7 @@ seata:
       server-addr: 192.168.249.130:8848
       group: SEATA_GROUP
       namespace: dae2f8c4-a44a-4143-afc5-1f8aaa84c72c
+
+rocketmq:
+  name-server: localhost:9876
+  #name-server: 192.168.249.130:9876
