@@ -20,3 +20,9 @@ CREATE TABLE `undo_log`
     `log_modified`  datetime(6) NOT NULL COMMENT 'modify datetime',
     UNIQUE KEY `ux_undo_log` (`xid`,`branch_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='AT transaction mode undo table';
+
+CREATE TABLE `tx_record` (
+                             `tx_no` varchar(64) NOT NULL COMMENT '事务Id',
+                             `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                             PRIMARY KEY (`tx_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='事务记录表';

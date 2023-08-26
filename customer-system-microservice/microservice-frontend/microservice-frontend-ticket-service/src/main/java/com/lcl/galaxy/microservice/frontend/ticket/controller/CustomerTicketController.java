@@ -27,4 +27,12 @@ public class CustomerTicketController {
         customerTicketService.insertTicket(addTicketReqVO);
         return Result.success(true);
     }
+
+    @PostMapping(value = "/tmq")
+    Result<Boolean> generateTicket(@RequestBody AddTicketReqVO addTicketReqVO) {
+
+        customerTicketService.generateTicket(addTicketReqVO);
+        return Result.success(true);
+    }
+
 }
