@@ -53,4 +53,10 @@ public class ChatRecordController {
         log.info("被 Sentinel 限流了 。。。。。");
         return Result.success(false);
     }
+
+
+    @GetMapping("/switch")
+    public Result<Boolean> testSwitch(){
+        return Result.success(true);
+    }
 }

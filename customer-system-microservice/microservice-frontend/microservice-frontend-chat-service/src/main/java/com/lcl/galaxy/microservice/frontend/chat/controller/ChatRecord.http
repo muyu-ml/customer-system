@@ -17,3 +17,5 @@ Content-Type: application/json
 }
 
 ###
+GET localhost:9004/chatRecords/switch
+Accept: application/json
